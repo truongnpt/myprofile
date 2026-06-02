@@ -45,18 +45,16 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
         aria-hidden={!isOpen}
         tabIndex={isOpen ? 0 : -1}
         onClick={closeMenu}
-        className={`mobile-menu-overlay fixed inset-0 z-40 bg-black/50 backdrop-blur-sm md:hidden ${
-          isOpen ? "mobile-menu-overlay--open" : "mobile-menu-overlay--closed"
-        }`}
+        className={`mobile-menu-overlay fixed h-[100dvh] w-full inset-0 z-40 bg-black/50 backdrop-blur-sm md:hidden ${isOpen ? "mobile-menu-overlay--open" : "mobile-menu-overlay--closed"
+          }`}
       />
 
       <nav
         aria-label="Mobile navigation"
         aria-hidden={!isOpen}
         inert={!isOpen}
-        className={`mobile-menu-panel fixed right-0 top-0 z-50 flex w-[min(88%,22rem)] flex-col border-l border-gray-200 bg-white shadow-2xl dark:border-gray-700 dark:bg-gray-900 md:hidden ${
-          isOpen ? "mobile-menu-panel--open" : "mobile-menu-panel--closed"
-        }`}
+        className={`mobile-menu-panel fixed -right-5 top-0 z-100 flex w-[min(88%,22rem)] flex-col border-l border-gray-200 bg-white shadow-2xl dark:border-gray-700 dark:bg-gray-900 md:hidden ${isOpen ? "mobile-menu-panel--open" : "mobile-menu-panel--closed"
+          }`}
       >
         <div className="flex shrink-0 items-center justify-between border-b border-gray-200 px-5 py-5 dark:border-gray-700">
           <span className="text-sm font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">
@@ -83,11 +81,10 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
                 href={link.href}
                 onClick={closeMenu}
                 tabIndex={isOpen ? 0 : -1}
-                className={`rounded-xl px-4 py-3.5 text-base font-medium capitalize smooth-transition ${
-                  isActive
-                    ? "bg-[#0f766e]/10 text-[#0f766e] dark:bg-[#14b8a6]/15 dark:text-[#14b8a6]"
-                    : "text-gray-800 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-800"
-                }`}
+                className={`rounded-xl px-4 py-3.5 text-base font-medium capitalize smooth-transition ${isActive
+                  ? "bg-[#0f766e]/10 text-[#0f766e] dark:bg-[#14b8a6]/15 dark:text-[#14b8a6]"
+                  : "text-gray-800 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-800"
+                  }`}
               >
                 {t(link.vi, link.en)}
               </a>

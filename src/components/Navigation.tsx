@@ -1,13 +1,12 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 import { useTheme } from "@/contexts/ThemeContext";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useActiveSection } from "@/hooks/useActiveSection";
 import { MobileMenu } from "./MobileMenu";
 import { portfolioData } from "@/data/portfolioData";
-
-const brandInitials = "NPT";
 
 export const Navigation: React.FC = () => {
   const { theme, toggleTheme } = useTheme();
@@ -25,24 +24,30 @@ export const Navigation: React.FC = () => {
 
   return (
     <header
-      className={`fixed left-1/2 w-[min(100%-1.25rem,72rem)] -translate-x-1/2 smooth-transition border ${
-        mobileMenuOpen
-          ? "top-2 z-[60] rounded-2xl border-gray-200 bg-white shadow-lg shadow-black/10 dark:border-gray-700 dark:bg-gray-900 dark:shadow-black/30"
-          : scrolled
-            ? "top-2 z-50 rounded-2xl border-gray-200/70 bg-white/92 shadow-lg shadow-black/[0.06] backdrop-blur-md dark:border-gray-700/60 dark:bg-gray-900/92 dark:shadow-black/25"
-            : "top-3 z-50 rounded-2xl border-white/40 bg-white/65 shadow-md shadow-black/[0.04] backdrop-blur-sm dark:border-gray-700/40 dark:bg-gray-900/75"
-      }`}
+      className={`fixed left-1/2 w-[min(100%-1.25rem,72rem)] -translate-x-1/2 smooth-transition border ${mobileMenuOpen
+        ? "top-2 z-[60] rounded-full border-gray-200 bg-white shadow-lg shadow-black/10 dark:border-gray-700 dark:bg-gray-900 dark:shadow-black/30"
+        : scrolled
+          ? "top-2 z-50 rounded-full border-gray-200/70 bg-white/92 shadow-lg shadow-black/[0.06] backdrop-blur-md dark:border-gray-700/60 dark:bg-gray-900/92 dark:shadow-black/25"
+          : "top-3 z-50 rounded-full border-white/40 bg-white/65 shadow-md  backdrop-blur-sm dark:border-gray-700/40 dark:bg-gray-900/75"
+        }`}
     >
       <nav
-        className={`container mx-auto flex items-center justify-between gap-3 px-3 smooth-transition md:px-5 ${scrolled ? "py-2" : "py-2.5"
+        className={`container mx-auto flex items-center justify-between gap-3 px-3 smooth-transition md:px-3.5 ${scrolled ? "py-2" : "py-2.5"
           }`}
       >
         <a
           href="#home"
           className="group flex min-w-0 shrink-0 items-center gap-2.5 sm:gap-3"
         >
-          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[#0f766e] to-[#064635] text-xs font-bold tracking-wide text-white shadow-md shadow-teal-700/30 transition-transform duration-300 group-hover:scale-105 sm:h-10 sm:w-10 sm:text-sm">
-            {brandInitials}
+          <span className="relative h-9 w-9 shrink-0 overflow-hidden rounded-full shadow-md shadow-teal-700/30 ring-3 ring-[#0f766e] transition-transform duration-300 group-hover:scale-105 sm:h-10 sm:w-10 dark:ring-[#14b8a6]/25">
+            <Image
+              src="/images/hero.png"
+              alt={t(portfolioData.hero.name.vi, portfolioData.hero.name.en)}
+              fill
+              sizes="40px"
+              className="object-cover object-[center_18%]"
+              priority
+            />
           </span>
           <span className="hidden min-w-0 sm:block">
             <span className="block truncate text-sm font-semibold leading-tight text-gray-900 dark:text-white md:text-base">
@@ -65,8 +70,8 @@ export const Navigation: React.FC = () => {
                   <a
                     href={link.href}
                     className={`inline-block rounded-full px-2.5 py-1.5 text-xs font-medium capitalize whitespace-nowrap smooth-transition xl:px-3 xl:text-sm ${isActive
-? "bg-white text-[#064635] shadow-sm dark:bg-gray-700 dark:text-[#14b8a6]"
-                        : "text-gray-600 hover:text-[#0f766e] dark:text-gray-400 dark:hover:text-[#14b8a6]"
+                      ? "bg-white text-[#064635] shadow-sm dark:bg-gray-700 dark:text-[#14b8a6]"
+                      : "text-gray-600 hover:text-[#0f766e] dark:text-gray-400 dark:hover:text-[#14b8a6]"
                       }`}
                   >
                     {t(link.vi, link.en)}

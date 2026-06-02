@@ -30,7 +30,7 @@ export const HeroPortrait: React.FC = () => {
         <div className="relative h-full w-full overflow-hidden rounded-full bg-slate-900/50 ring-2 ring-white/40 dark:ring-white/15">
           <Image
             src="/images/hero.png"
-            alt="Nguyen Phi Truong - Frontend Developer"
+            alt="Nguyen Phi Truong - Senior Frontend Developer"
             fill
             priority
             sizes="(max-width: 640px) 280px, (max-width: 1024px) 400px, 440px"
@@ -52,7 +52,7 @@ export const HeroPortrait: React.FC = () => {
           {t("Kinh nghiệm", "Experience")}
         </p>
         <p className="text-sm font-bold text-teal-700 dark:text-teal-300 sm:text-base">
-          5+ {t("năm", "Years")}
+          6+ {t("năm", "Years")}
         </p>
       </div>
     </div>

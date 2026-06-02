@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Nguyen Phi Truong - Frontend Developer",
+  title: "Nguyen Phi Truong - Senior Frontend Developer",
   description:
-    "Frontend Developer with over 5 years of experience in ReactJS, Next.js, TypeScript. Specializing in responsive web applications and fullstack development.",
+    "Senior Frontend Developer with 6+ years of experience building web applications and SaaS products using ReactJS, Next.js, and TypeScript. I have extensive experience developing high-performance, responsive user interfaces and delivering complex systems such as LMS, CRM, and HRM platforms. With a strong Fullstack foundation in PHP/Laravel and MySQL, I effectively bridge frontend and backend development to build scalable, maintainable, and reliable applications.",
 };
 
 export default function RootLayout({
@@ -28,7 +28,12 @@ export default function RootLayout({
       <head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Nguyen Phi Truong - Frontend Developer</title>
+        <title>{metadata.title as string}</title>
+        <meta name="description" content={metadata.description as string} />
+        <meta
+          property="og:image"
+          content="https://myprofile.cudem.online/images/hero.jpg"
+        ></meta>
         <link
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
           rel="stylesheet"

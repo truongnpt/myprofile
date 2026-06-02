@@ -6,6 +6,7 @@ export interface NavLink {
 
 export interface ContactInfo {
   email: string;
+  secondaryEmail: string;
   phone: string;
   linkedin: string;
   github: string;
@@ -18,7 +19,10 @@ export interface ContactInfo {
 export interface SocialLink {
   href: string;
   icon: string;
-  hoverColor: string;
+  label: {
+    vi: string;
+    en: string;
+  };
 }
 
 export interface StatItem {
@@ -69,11 +73,28 @@ export interface ExperienceItem {
   period: string;
   color: string;
   project: string;
+  technologies: string[];
   responsibilities: {
     vi: string;
     en: string;
   }[];
   links: string[];
+}
+
+export interface ExperienceContent {
+  title: {
+    vi: string;
+    en: string;
+  };
+  headline: {
+    vi: string;
+    en: string;
+  };
+  subtitle: {
+    vi: string;
+    en: string;
+  };
+  items: ExperienceItem[];
 }
 
 export interface HeroContent {
@@ -93,6 +114,15 @@ export interface HeroContent {
     vi: string;
     en: string;
   };
+  shortDescription: {
+    vi: string;
+    en: string;
+  };
+  availability: {
+    vi: string;
+    en: string;
+  };
+  yearsExperience: string;
   buttons: {
     contact: {
       vi: string;
@@ -109,8 +139,20 @@ export interface HeroContent {
   };
 }
 
+export interface AboutHighlight {
+  text: {
+    vi: string;
+    en: string;
+  };
+  icon: string;
+}
+
 export interface AboutContent {
   title: {
+    vi: string;
+    en: string;
+  };
+  headline: {
     vi: string;
     en: string;
   };
@@ -127,11 +169,20 @@ export interface AboutContent {
     vi: string;
     en: string;
   };
+  highlights: AboutHighlight[];
   contactInfo: ContactInfo;
 }
 
 export interface SkillsContent {
   title: {
+    vi: string;
+    en: string;
+  };
+  headline: {
+    vi: string;
+    en: string;
+  };
+  subtitle: {
     vi: string;
     en: string;
   };
@@ -145,6 +196,10 @@ export interface SkillsContent {
 
 export interface OutstandingStrengthsContent {
   title: {
+    vi: string;
+    en: string;
+  };
+  headline: {
     vi: string;
     en: string;
   };
@@ -192,16 +247,12 @@ export interface LanguagesContent {
   items: LanguageItem[];
 }
 
-export interface ExperienceContent {
+export interface ContactContent {
   title: {
     vi: string;
     en: string;
   };
-  items: ExperienceItem[];
-}
-
-export interface ContactContent {
-  title: {
+  headline: {
     vi: string;
     en: string;
   };
@@ -258,9 +309,48 @@ export interface FooterContent {
   };
 }
 
+export interface SelectedWorkProject {
+  title: {
+    vi: string;
+    en: string;
+  };
+  company: {
+    vi: string;
+    en: string;
+  };
+  description: {
+    vi: string;
+    en: string;
+  };
+  technologies: string[];
+  url?: string;
+}
+
+export interface SelectedWorkContent {
+  headline: {
+    vi: string;
+    en: string;
+  };
+  subtitle: {
+    vi: string;
+    en: string;
+  };
+  searchPlaceholder: {
+    vi: string;
+    en: string;
+  };
+  allFilterLabel: {
+    vi: string;
+    en: string;
+  };
+  filters: string[];
+  projects: SelectedWorkProject[];
+}
+
 export interface PortfolioData {
   navigation: NavLink[];
   hero: HeroContent;
+  selectedWork: SelectedWorkContent;
   about: AboutContent;
   skills: SkillsContent;
   strengths: OutstandingStrengthsContent;
@@ -283,6 +373,11 @@ export const portfolioData: PortfolioData = {
       vi: "Học vấn & Ngôn ngữ",
       en: "Education & Languages",
     },
+    {
+      href: "#selected-work",
+      vi: "Dự án",
+      en: "Projects",
+    },
     { href: "#contact", vi: "Liên hệ", en: "Contact" },
   ],
 
@@ -296,27 +391,194 @@ export const portfolioData: PortfolioData = {
       en: "Nguyen Phi Truong",
     },
     title: {
-      vi: "Frontend Developer",
-      en: "Frontend Developer",
+      vi: "Senior Frontend Developer",
+      en: "Senior Frontend Developer",
     },
     description: {
-      vi: "Tôi là Frontend Developer với hơn 5 năm kinh nghiệm phát triển ứng dụng web và nền tảng SaaS. Thành thạo ReactJS, Next.js, TypeScript, HTML5, CSS3 và xây dựng giao diện responsive theo hướng mobile-first. Có kinh nghiệm phát triển các hệ thống E-Learning (LMS), CRM, HRM HPM và các nền tảng quản trị doanh nghiệp.",
-      en: "I am a Frontend Developer with over 5 years of experience in developing web applications and SaaS platforms. Proficient in ReactJS, Next.js, TypeScript, HTML5, and CSS3, with strong expertise in building responsive, mobile-first user interfaces. Experienced in developing E-Learning (LMS), CRM, HRM, HPM, and enterprise management systems.",
+      vi: "Tôi là Senior Frontend Developer với hơn 6 năm kinh nghiệm phát triển ứng dụng web và các sản phẩm SaaS sử dụng ReactJS, Next.js và TypeScript. Tôi có nhiều kinh nghiệm trong việc xây dựng các giao diện người dùng hiệu năng cao, đáp ứng tốt trên nhiều thiết bị và triển khai các hệ thống phức tạp như LMS (Learning Management System), CRM (Customer Relationship Management) và HRM (Human Resource Management). Với nền tảng Fullstack vững chắc trên PHP/Laravel và MySQL, tôi có khả năng kết nối hiệu quả giữa frontend và backend, góp phần xây dựng các ứng dụng có khả năng mở rộng cao, dễ bảo trì và vận hành ổn định.",
+      en: "I am a Senior Frontend Developer with 6+ years of experience building web applications and SaaS products using ReactJS, Next.js, and TypeScript. I have extensive experience developing high-performance, responsive user interfaces and delivering complex systems such as LMS, CRM, and HRM platforms. With a strong Fullstack foundation in PHP/Laravel and MySQL, I effectively bridge frontend and backend development to build scalable, maintainable, and reliable applications."
     },
+    shortDescription: {
+      vi: "Senior Frontend Developer với hơn 6 năm xây dựng sản phẩm SaaS hiệu năng cao bằng React, Next.js & TypeScript. Nền tảng Fullstack vững với PHP/Laravel — triển khai các nền tảng LMS, CRM và HRM có khả năng mở rộng cho nhiều tổ chức.",
+      en: "Senior Frontend Developer with 6+ years building high-performance SaaS products in React, Next.js & TypeScript. Strong fullstack foundation in PHP/Laravel — shipping scalable LMS, CRM and HRM platforms used by teams across multiple organizations.",
+    },
+    availability: {
+      vi: "Sẵn sàng cho cơ hội mới",
+      en: "Available for new opportunities",
+    },
+    yearsExperience: "6+",
     buttons: {
       contact: {
-        vi: "Liên hệ với tôi",
+        vi: "Liên hệ",
         en: "Contact Me",
       },
       resume: {
-        vi: "Xem CV",
-        en: "View CV",
+        vi: "Tải CV",
+        en: "Download CV",
       },
       cv: {
-        vi: "/cv/CV - NGUYEN PHI TRUONG - FRONTEND DEVELOPER - VI.pdf",
-        en: "/cv/CV - NGUYEN PHI TRUONG - FRONTEND DEVELOPER - EN.pdf",
+        vi: "/cv/CV_Senior_Frontend_Developer_Nguyen_Phi_Truong_VI.pdf",
+        en: "/cv/CV_Senior_Frontend_Developer_Nguyen_Phi_Truong_EN.pdf",
       },
     },
+  },
+
+  selectedWork: {
+    headline: {
+      vi: "Dự án tiêu biểu",
+      en: "Selected work",
+    },
+    subtitle: {
+      vi: "Tổng quan các sản phẩm tôi đã triển khai trong SaaS, giáo dục, nhân sự và logistics.",
+      en: "A snapshot of products I've shipped across SaaS, education, HR and logistics.",
+    },
+    searchPlaceholder: {
+      vi: "Tìm kiếm dự án...",
+      en: "Search projects...",
+    },
+    allFilterLabel: {
+      vi: "Tất cả",
+      en: "All",
+    },
+    filters: [
+      "Next.js",
+      "TypeScript",
+      "ShadCN UI",
+      "WebSocket",
+      "REST",
+      "ReactJS",
+      "Laravel",
+    ],
+    projects: [
+      {
+        title: {
+          vi: "Edutify — SaaS LMS",
+          en: "Edutify — SaaS LMS",
+        },
+        company: {
+          vi: "The Mona Group — Mona Host",
+          en: "The Mona Group — Mona Host",
+        },
+        description: {
+          vi: "Thiết kế và triển khai bộ sản phẩm giáo dục SaaS (LMS + Test Platform + CRM) với Next.js, TypeScript và ShadCN UI.",
+          en: "Designed and shipped a SaaS education suite (LMS + Test Platform + CRM) with Next.js, TypeScript and ShadCN UI.",
+        },
+        technologies: ["Next.js", "TypeScript", "ShadCN UI", "WebSocket"],
+        url: "https://dash.edutify.io",
+      },
+      {
+        title: {
+          vi: "HPM — SaaS Hosting Provider Management",
+          en: "Hosting Provider Management (HPM) — SaaS",
+        },
+        company: {
+          vi: "The Mona Group — Mona Host",
+          en: "The Mona Group — Mona Host",
+        },
+        description: {
+          vi: "Thiết kế nền tảng SaaS quản lý nhà cung cấp hosting với Next.js và ShadCN UI.",
+          en: "Designed a SaaS platform for hosting providers in Next.js + ShadCN UI.",
+        },
+        technologies: ["Next.js", "TypeScript", "ShadCN UI", "WebSocket"],
+        url: "https://portal.system443.com",
+      },
+      {
+        title: {
+          vi: "The IELTS Workshop — CRM",
+          en: "The IELTS Workshop — CRM",
+        },
+        company: {
+          vi: "The Mona Group — Mona Host",
+          en: "The Mona Group — Mona Host",
+        },
+        description: {
+          vi: "Nâng cấp CRM quản lý học viên, khóa học, hợp đồng và thanh toán.",
+          en: "Upgraded CRM for student, course, contract and payment management.",
+        },
+        technologies: ["Next.js", "TypeScript", "ShadCN UI"],
+        url: "https://newcrm.tiw.vn",
+      },
+      {
+        title: {
+          vi: "Pasal LMS",
+          en: "Pasal LMS",
+        },
+        company: {
+          vi: "The Mona Group — Mona Host",
+          en: "The Mona Group — Mona Host",
+        },
+        description: {
+          vi: "Phát triển và nâng cấp module LMS cho học viên, bài test, lớp học và theo dõi tiến độ.",
+          en: "Developed and enhanced LMS modules for students, tests, classes and progress tracking.",
+        },
+        technologies: ["Next.js", "TypeScript", "ShadCN UI"],
+        url: "https://online.pasal.edu.vn",
+      },
+      {
+        title: {
+          vi: "Qualee — HRM SaaS",
+          en: "Qualee — HRM SaaS",
+        },
+        company: {
+          vi: "Faba Technology",
+          en: "Faba Technology",
+        },
+        description: {
+          vi: "Xây dựng nền tảng HRM Qualee với ReactJS, TypeScript và Laravel.",
+          en: "Built the Qualee HRM platform with ReactJS, TypeScript and Laravel.",
+        },
+        technologies: ["ReactJS", "TypeScript", "Laravel", "WebSocket"],
+        url: "https://console.qualee.com",
+      },
+      {
+        title: {
+          vi: "PNP Global Supply — Logistics CRM",
+          en: "PNP Global Supply — Logistics CRM",
+        },
+        company: {
+          vi: "Faba Technology",
+          en: "Faba Technology",
+        },
+        description: {
+          vi: "Xây dựng CRM logistics với ReactJS, Ant Design và WebSocket.",
+          en: "Built logistics CRM with ReactJS + Ant Design + WebSocket.",
+        },
+        technologies: ["ReactJS", "Ant Design", "Laravel", "MySQL"],
+        url: "https://console.pnpglobalsupply.com",
+      },
+      {
+        title: {
+          vi: "Transportme — AU Bus Transportation",
+          en: "Transportme — AU Bus Transportation",
+        },
+        company: {
+          vi: "Faba Technology",
+          en: "Faba Technology",
+        },
+        description: {
+          vi: "Xây dựng nền tảng Transportme với VueJS, Vuetify và CodeIgniter.",
+          en: "Built the Transportme platform with VueJS, Vuetify and CodeIgniter.",
+        },
+        technologies: ["VueJS", "Vuetify", "CodeIgniter", "MySQL"],
+        url: "https://transportme.com.au",
+      },
+      {
+        title: {
+          vi: "E-commerce & Corporate Websites",
+          en: "E-commerce & Corporate Websites",
+        },
+        company: {
+          vi: "Faba Technology",
+          en: "Faba Technology",
+        },
+        description: {
+          vi: "Triển khai các dự án thương mại điện tử với ReactJS, Vue.js, Bootstrap và Shopify.",
+          en: "Shipped e-commerce projects with ReactJS, Vue.js, Bootstrap and Shopify.",
+        },
+        technologies: ["ReactJS", "Vue.js", "Next.js", "Shopify"],
+        url: "https://www.sanctuaryclothing.com",
+      },
+    ],
   },
 
   about: {
@@ -324,15 +586,19 @@ export const portfolioData: PortfolioData = {
       vi: "Giới thiệu",
       en: "About Me",
     },
+    headline: {
+      vi: "Kỹ thuật cho chất lượng & quy mô",
+      en: "Engineering for craft & scale",
+    },
     stats: [
       {
-        value: "5+",
+        value: "6+",
         label: { vi: "Năm kinh nghiệm", en: "Years Experience" },
         color: "text-blue-600 dark:text-blue-400",
       },
       {
-        value: "20+",
-        label: { vi: "Dự án hoàn thành", en: "Projects Completed" },
+        value: "10+",
+        label: { vi: "Dự án đã giao", en: "Projects Delivered" },
         color: "text-purple-600 dark:text-purple-400",
       },
       {
@@ -341,25 +607,56 @@ export const portfolioData: PortfolioData = {
         color: "text-green-600 dark:text-green-400",
       },
       {
-        value: "100%",
+        value: "99%",
         label: { vi: "Cam kết", en: "Commitment" },
         color: "text-orange-600 dark:text-orange-400",
       },
     ],
     description1: {
-      vi: "Tôi là Frontend Developer với hơn 5 năm kinh nghiệm phát triển ứng dụng web và nền tảng SaaS. Thành thạo ReactJS, Next.js, TypeScript, HTML5, CSS3 và xây dựng giao diện responsive theo hướng mobile-first. Có kinh nghiệm phát triển các hệ thống E-Learning (LMS), CRM, HRM HPM và các nền tảng quản trị doanh nghiệp.",
-      en: "I am a Frontend Developer with over 5 years of experience in developing web applications and SaaS platforms. Proficient in ReactJS, Next.js, TypeScript, HTML5, and CSS3, with strong expertise in building responsive, mobile-first user interfaces. Experienced in developing E-Learning (LMS), CRM, HRM, HPM, and enterprise management systems.",
+      vi: "Tôi xây dựng các nền tảng web production-grade — từ giao diện pixel-perfect đến kiến trúc có khả năng mở rộng. Trọng tâm của tôi là hiệu năng, khả năng bảo trì và sự rõ ràng trong phối hợp.",
+      en: "I build production-grade web platforms — from pixel-perfect interfaces to scalable architectures. My focus is performance, maintainability and clarity in collaboration.",
     },
     description2: {
-      vi: "Có nền tảng Fullstack với PHP/Laravel, MySQL, giúp phối hợp hiệu quả giữa frontend và backend trong quá trình phát triển sản phẩm. Có kinh nghiệm xây dựng giao diện từ Figma, tích hợp RESTful API, WebSocket, tối ưu hiệu năng và trải nghiệm người dùng. Đồng thời tham gia review code, xây dựng kiến trúc frontend và áp dụng các tiêu chuẩn phát triển phần mềm trong môi trường Agile/Scrum.",
-      en: "With a Fullstack background in PHP/Laravel and MySQL, I am able to collaborate effectively across both frontend and backend development throughout the product lifecycle. I have hands-on experience translating Figma designs into production-ready applications, integrating RESTful APIs and WebSocket services, and optimizing application performance and user experience. Additionally, I have contributed to code reviews, frontend architecture design, and the implementation of software development best practices within Agile/Scrum environments.",
+      vi: "Tôi đã dẫn dắt frontend cho các hệ thống LMS, CRM và HRM ở quy mô production — từ bàn giao Figma đến kiến trúc, review code và nhịp triển khai. Nền tảng Fullstack PHP/Laravel giúp tôi làm việc linh hoạt giữa client và server.",
+      en: "I've led frontend on LMS, CRM and HRM systems at production scale — from the Figma handoff to the architecture, code review and shipping cadence. My fullstack background in PHP/Laravel lets me move fluently across the seam between client and server.",
     },
     description3: {
-      vi: "Chủ động, trách nhiệm, có tinh thần học hỏi và mong muốn phát triển lâu dài cùng công ty.",
-      en: "Proactive, responsible, eager to learn, and committed to long-term development with the company.",
+      vi: "Chủ động, có trách nhiệm và cam kết với sự tinh xảo lâu dài — cả trong codebase lẫn đội ngũ xung quanh.",
+      en: "Proactive, responsible and committed to long-term craftsmanship — both in the codebase and in the team around it.",
     },
+    highlights: [
+      {
+        text: {
+          vi: "Thiết kế kiến trúc hệ thống SaaS trong các lĩnh vực Giáo dục, Nhân sự & Logistics",
+          en: "Architected SaaS systems across Education, HR & Logistics domains",
+        },
+        icon: "fas fa-bolt",
+      },
+      {
+        text: {
+          vi: "Chuyển đổi thiết kế Figma phức tạp thành hệ thống component tái sử dụng",
+          en: "Translated complex Figma designs into reusable component systems",
+        },
+        icon: "fas fa-bolt",
+      },
+      {
+        text: {
+          vi: "Dẫn dắt code review & quyết định kiến trúc frontend trong team Agile",
+          en: "Led code reviews & frontend architecture decisions in Agile teams",
+        },
+        icon: "fas fa-bolt",
+      },
+      {
+        text: {
+          vi: "Kết nối frontend & backend với PHP/Laravel & RESTful APIs",
+          en: "Bridged frontend & backend with PHP/Laravel & RESTful APIs",
+        },
+        icon: "fas fa-bolt",
+      },
+    ],
     contactInfo: {
-      email: "truongnguyen1998.dev@gmail.com",
+      email: "truongnpt1998@gmail.com",
+      secondaryEmail: "truongnguyen1998.dev@gmail.com",
       phone: "0399812700",
       linkedin: "https://www.linkedin.com/in/truongnguyen1998/",
       github: "https://github.com/truongnpt",
@@ -375,89 +672,91 @@ export const portfolioData: PortfolioData = {
       vi: "Kỹ năng chuyên môn",
       en: "Technical Skills",
     },
+    headline: {
+      vi: "Công cụ chuyên môn",
+      en: "Tools of the trade",
+    },
+    subtitle: {
+      vi: "Bộ công nghệ thực tiễn, được tinh chỉnh qua sáu năm triển khai phần mềm production.",
+      en: "A pragmatic stack, refined over six years of shipping production software.",
+    },
     categories: [
       {
         title: "Frontend",
-        icon: "fab fa-react",
+        icon: "fas fa-code",
         iconColor: "text-blue-600 dark:text-blue-400",
         skills: [
-          "ReactJS, Next.js (SSR, SSG)",
+          "ReactJS",
+          "Next.js (SSR/SSG)",
+          "TypeScript",
           "Redux",
           "Zustand",
           "React Query",
         ],
-   
       },
       {
         title: "Backend",
-        icon: "fas fa-server",
+        icon: "fas fa-database",
         iconColor: "text-green-600 dark:text-green-400",
         skills: [
-          "PHP/Laravel",
+          "PHP / Laravel",
           "MySQL",
           "MVC",
-          "SQL Injection",
-          "Query optimization",
+          "Query Optimization",
+          "REST APIs",
         ],
       },
       {
         title: "UI & Styling",
-        icon: "fas fa-paint-brush",
+        icon: "fas fa-palette",
         iconColor: "text-purple-600 dark:text-purple-400",
         skills: [
-          "HTML5",
-          "CSS",
-          "SCSS",
-          "Grid",
-          "Flexbox",
-          "responsive UI",
           "TailwindCSS",
+          "ShadCN UI",
           "Ant Design",
-          "ShadCN",
-          "Styled-components",
+          "Styled-Components",
+          "SCSS",
+          "Figma",
         ],
-   
       },
       {
         title: "API & Data",
-        icon: "fas fa-exchange-alt",
+        icon: "fas fa-project-diagram",
         iconColor: "text-indigo-600 dark:text-indigo-400",
         skills: [
-          "RESTful API",
-          "Axios/Fetch",
-          "Realtime",
+          "RESTful APIs",
           "WebSocket",
-          "TypeScript",
+          "Axios / Fetch",
+          "Realtime Sync",
         ],
       },
       {
         title: "Performance & SEO",
-        icon: "fas fa-fire",
+        icon: "fas fa-tachometer-alt",
         iconColor: "text-orange-600 dark:text-orange-400",
         skills: [
-          "Lazy loading",
-          "Code splitting",
-          "Clean code",
-          "tối ưu SSR/SSG",
+          "Lazy Loading",
+          "Code Splitting",
+          "SSR/SSG Tuning",
+          "Core Web Vitals",
         ],
       },
       {
         title: "Tools & Workflow",
-        icon: "fas fa-tools",
+        icon: "fas fa-wrench",
         iconColor: "text-orange-600 dark:text-orange-400",
-        skills: ["Git (GitHub, GitLab)", "Docker", "Figma", "Scrum"],
+        skills: [
+          "Git / GitHub / GitLab",
+          "Docker",
+          "Scrum / Agile",
+          "AI-Assisted Coding",
+        ],
       },
       {
         title: "Testing",
         icon: "fas fa-vial",
         iconColor: "text-green-600 dark:text-green-400",
-        skills: ["Jest", "React Testing Library", "Unit Test"],
-      },
-      {
-        title: "Other",
-        icon: "fas fa-cogs",
-        iconColor: "text-gray-600 dark:text-gray-400",
-        skills: ["refactoring code", "review code", "Coding với AI"],
+        skills: ["Jest", "React Testing Library", "Unit Testing"],
       },
     ],
     softSkillsTitle: {
@@ -545,87 +844,79 @@ export const portfolioData: PortfolioData = {
       vi: "Điểm mạnh nổi bật",
       en: "Outstanding Strengths",
     },
+    headline: {
+      vi: "Tôi mang đến cho đội ngũ",
+      en: "What I bring to your team",
+    },
     strengths: [
       {
         title: {
           vi: "Thành thạo ReactJS & Next.js",
-          en: "Proficient in ReactJS & Next.js",
+          en: "ReactJS & Next.js Mastery",
         },
         description: {
-          vi: "Có kinh nghiệm triển khai các giải pháp SSR (Server-Side Rendering) và SSG (Static Site Generation) nhằm tối ưu hiệu suất và SEO.",
-          en: "Experienced in implementing Server-Side Rendering (SSR) and Static Site Generation (SSG) solutions to optimize performance and SEO.",
+          vi: "Chuyên sâu SSR, SSG, App Router và các pattern React hiện đại cho hiệu năng và SEO.",
+          en: "Deep expertise in SSR, SSG, App Router and modern React patterns for performance and SEO.",
         },
-        icon: "fab fa-react",
+        icon: "fas fa-bolt",
         iconColor: "text-blue-600 dark:text-blue-400",
       },
       {
         title: {
-          vi: "Kỹ năng vững chắc về Frontend",
-          en: "Strong Frontend Skills",
+          vi: "Kiến trúc Design System",
+          en: "Design System Architect",
         },
         description: {
-          vi: "HTML5, CSS3, SCSS, TailwindCSS, Styled-components, TypeScript, React Query, Zustand, Redux",
-          en: "HTML5, CSS3, SCSS, TailwindCSS, Styled-components, TypeScript, React Query, Zustand, Redux",
+          vi: "Xây dựng thư viện component tái sử dụng với TailwindCSS, ShadCN UI, Ant Design và Styled-components.",
+          en: "Build reusable component libraries with TailwindCSS, ShadCN UI, Ant Design and Styled-components.",
         },
-        icon: "fas fa-paint-brush",
+        icon: "fas fa-layer-group",
         iconColor: "text-purple-600 dark:text-purple-400",
       },
       {
         title: {
-          vi: "Trải nghiệm với UI Frameworks",
-          en: "Experience with UI Frameworks",
+          vi: "Fullstack đa năng",
+          en: "Fullstack Capable",
         },
         description: {
-          vi: "Có kinh nghiệm sử dụng các UI Frameworks như Ant Design và ShadCN/UI để xây dựng giao diện người dùng hiện đại, nhất quán.",
-          en: "Experienced in using UI frameworks such as Ant Design and ShadCN/UI to build modern, consistent user interfaces.",
+          vi: "Hơn 3 năm xây dựng backend với PHP/Laravel và MySQL — hiệu quả trên toàn bộ stack.",
+          en: "3+ years building backends with PHP/Laravel and MySQL — effective across the whole stack.",
         },
-        icon: "fas fa-layer-group",
+        icon: "fas fa-database",
         iconColor: "text-green-600 dark:text-green-400",
       },
       {
         title: {
-          vi: "Kinh nghiệm Backend",
-          en: "Backend Experience",
+          vi: "Realtime & APIs",
+          en: "Realtime & APIs",
         },
         description: {
-          vi: "Có hơn 3 năm kinh nghiệm xây dựng, phát triển và bảo trì các ứng dụng web sử dụng PHP/Laravel kết hợp với MySQL.",
-          en: "I have over 3 years of experience building, developing, and maintaining web applications using PHP/Laravel in combination with MySQL.",
+          vi: "Microservices RESTful và tính năng realtime WebSocket ở quy mô production.",
+          en: "RESTful microservices and WebSocket-powered realtime features at production scale.",
         },
-        icon: "fas fa-server",
-        iconColor: "text-orange-600 dark:text-orange-400",
-      },
-      {
-        title: {
-          vi: "API & WebSocket",
-          en: "API & WebSocket",
-        },
-        description: {
-          vi: "Có kinh nghiệm phát triển RESTful API phục vụ kiến trúc Microservices và tích hợp với các hệ thống bên thứ ba. Thành thạo ứng dụng WebSocket để xây dựng các tính năng real-time.",
-          en: "Experienced in developing RESTful APIs for Microservices architecture and integrating with third-party systems. Proficient in using WebSockets to build real-time features.",
-        },
-        icon: "fas fa-exchange-alt",
+        icon: "fas fa-broadcast-tower",
         iconColor: "text-indigo-600 dark:text-indigo-400",
       },
       {
         title: {
-          vi: "Responsive Design & SEO",
-          en: "Responsive Design & SEO",
+          vi: "Hiệu năng & SEO",
+          en: "Performance & SEO",
         },
         description: {
-          vi: "Am hiểu Responsive Design theo hướng Mobile-First, tối ưu hiệu năng ứng dụng và SEO.",
-          en: "Proficient in Responsive Design with a Mobile-First approach, optimizing application performance and SEO.",
+          vi: "Responsive mobile-first, lazy loading, code splitting và tối ưu Core Web Vitals.",
+          en: "Mobile-first responsive design, lazy loading, code splitting and Core Web Vitals optimization.",
         },
-        icon: "fas fa-mobile-alt",
-        iconColor: "text-pink-600 dark:text-pink-400",
+        icon: "fas fa-tachometer-alt",
+        iconColor: "text-orange-600 dark:text-orange-400",
       },
       {
         title: {
-          vi: "Làm việc nhóm & Scrum",
-          en: "Teamwork & Scrum",
+          vi: "Hợp tác Agile",
+          en: "Agile Collaboration",
         },
         description: {
-          vi: "Có kinh nghiệm làm việc theo mô hình Agile/Scrum và phối hợp hiệu quả với các nhóm Designer, QA và Backend.",
-          en: "Experienced in working with Agile/Scrum methodologies and effectively collaborating with Designer, QA, and Backend teams.",
+          vi: "Sẵn sàng sở hữu kiến trúc frontend và phối hợp với PM, BA, UX và Backend.",
+          en: "Comfortable owning frontend architecture while shipping with PM, BA, UX and Backend partners.",
         },
         icon: "fas fa-users",
         iconColor: "text-teal-600 dark:text-teal-400",
@@ -645,10 +936,10 @@ export const portfolioData: PortfolioData = {
           en: "Cao Thang Technical College",
         },
         major: {
-          vi: "Chuyên ngành: Công nghệ thông tin",
-          en: "Major: Information Technology",
+          vi: "Công nghệ thông tin",
+          en: "Information Technology",
         },
-        period: "2016 – 2019",
+        period: "2016 — 2019",
         color: "text-blue-600 dark:text-blue-400",
       },
     ],
@@ -666,8 +957,8 @@ export const portfolioData: PortfolioData = {
           en: "Vietnamese",
         },
         proficiency: {
-          vi: "Ngôn ngữ chính",
-          en: "Native language",
+          vi: "Bản ngữ",
+          en: "Native",
         },
         color: "text-green-600 dark:text-green-400",
       },
@@ -677,8 +968,8 @@ export const portfolioData: PortfolioData = {
           en: "English",
         },
         proficiency: {
-          vi: "Đọc, viết, giao tiếp kỹ thuật",
-          en: "Reading, writing, technical communication",
+          vi: "Đọc, viết & giao tiếp kỹ thuật",
+          en: "Reading, writing & technical communication",
         },
         color: "text-blue-600 dark:text-blue-400",
       },
@@ -690,13 +981,22 @@ export const portfolioData: PortfolioData = {
       vi: "Kinh nghiệm làm việc",
       en: "Work Experience",
     },
+    headline: {
+      vi: "Hành trình tạo giá trị",
+      en: "A timeline of impact",
+    },
+    subtitle: {
+      vi: "Kỹ sư frontend senior qua các lĩnh vực SaaS Giáo dục, Nhân sự, Logistics và Thương mại điện tử.",
+      en: "Senior frontend engineering across SaaS Education, HR, Logistics and E-commerce domains.",
+    },
     items: [
       {
         title: "Senior Frontend Developer",
         company: "The Mona Group - Mona Host",
         period: "10/2025 – Hiện tại",
         color: "text-green-600 dark:text-green-400",
-        project: "SaaS E-Learning(LMS) - Edusavvy",
+        project: "Edutify — SaaS LMS",
+        technologies: ["Next.js", "TypeScript", "ShadCN UI", "WebSocket", "REST"],
         responsibilities: [
           {
             vi: "• Thiết kế, phát triển và quản lý bộ sản phẩm giáo dục theo mô hình SaaS, bao gồm Test Platform, LMS và CRM bằng Next.js, TypeScript và ShadCN UI",
@@ -727,14 +1027,15 @@ export const portfolioData: PortfolioData = {
             en: "• Collaborated with Product Owner, UI/UX Designer and Backend Developer in Agile/Scrum to develop, upgrade and operate the product",
           },
         ],
-        links: ["https://dash.edusavvy.io"],
+        links: ["https://dash.edutify.io"],
       },
       {
         title: "Senior Frontend Developer",
         company: "The Mona Group - Mona Host",
         period: "10/2025 – Hiện tại",
         color: "text-green-600 dark:text-green-400",
-        project: "SaaS HPM - Hosting Provider Management",
+        project: "HPM — SaaS Hosting Provider Management",
+        technologies: ["Next.js", "TypeScript", "ShadCN UI", "WebSocket"],
         responsibilities: [
           {
             vi: "• Thiết kế và phát triển nền tảng quản lý nhà cung cấp dịch vụ hosting (HPM) theo mô hình SaaS bằng Next.js, TypeScript và ShadCN UI.",
@@ -772,7 +1073,8 @@ export const portfolioData: PortfolioData = {
         company: "The Mona Group - Mona Host",
         period: "10/2025 – Hiện tại",
         color: "text-green-600 dark:text-green-400",
-        project: "CRM - The IELTS Workshop (TIW)",
+        project: "The IELTS Workshop — CRM",
+        technologies: ["Next.js", "TypeScript", "ShadCN UI"],
         responsibilities: [
           {
             vi: "• Phát triển và nâng cấp hệ thống CRM phục vụ quản lý học viên, khóa học, hợp đồng và thanh toán bằng Next.js, TypeScript và ShadCN UI.",
@@ -802,7 +1104,8 @@ export const portfolioData: PortfolioData = {
         company: "The Mona Group - Mona Host",
         period: "10/2025 – Hiện tại",
         color: "text-green-600 dark:text-green-400",
-        project: "LMS - Pasal LMS",
+        project: "Pasal LMS",
+        technologies: ["Next.js", "TypeScript", "ShadCN UI"],
         responsibilities: [
           {
             vi: "• Tham gia phát triển và nâng cấp hệ thống LMS phục vụ học viên làm bài test, quản lý học viên, khóa học, lớp học, bài kiểm tra và tiến độ học tập bằng Next.js, TypeScript và ShadCN UI.",
@@ -829,7 +1132,8 @@ export const portfolioData: PortfolioData = {
         company: "Faba Technology",
         period: "01/2023 – 09/2025",
         color: "text-blue-600 dark:text-blue-400",
-        project: "SAP HR - QUALEE Human Resource Management SAP",
+        project: "Qualee — HRM SaaS",
+        technologies: ["ReactJS", "TypeScript", "Laravel", "WebSocket"],
         responsibilities: [
           {
             vi: "• Tham gia thiết kế và phát triển nền tảng quản lý nhân sự (HRM) Qualee bằng ReactJS, TypeScript và Laravel.",
@@ -860,7 +1164,8 @@ export const portfolioData: PortfolioData = {
         company: "Faba Technology",
         period: "01/2023 – 12/2023",
         color: "text-purple-600 dark:text-purple-400",
-        project: "Logistics CRM - PNP Global Supply",
+        project: "PNP Global Supply — Logistics CRM",
+        technologies: ["ReactJS", "Ant Design", "Laravel", "MySQL", "Docker"],
         responsibilities: [
           {
             vi: "• Tham gia phát triển hệ thống Logistics CRM (PNP Global Supply) với ReactJS, Ant Design framework và WebSocket.",
@@ -887,7 +1192,8 @@ export const portfolioData: PortfolioData = {
         company: "Faba Technology",
         period: "07/2020 – 12/2022",
         color: "text-green-600 dark:text-green-400",
-        project: "Transportme - AU Bus Transportation",
+        project: "Transportme — AU Bus Transportation",
+        technologies: ["VueJS", "Vuetify", "CodeIgniter", "MySQL"],
         responsibilities: [
           {
             vi: "• Tham gia phát triển và nâng cấp nền tảng quản lý vận tải hành khách Transportme bằng VueJS, Vuetify và CodeIgniter.",
@@ -914,7 +1220,8 @@ export const portfolioData: PortfolioData = {
         company: "Faba Technology",
         period: "07/2019 – 06/2020",
         color: "text-orange-600 dark:text-orange-400",
-        project: "E-commerce Website",
+        project: "E-commerce & Corporate Websites",
+        technologies: ["ReactJS", "Vue.js", "Next.js", "Shopify", "WordPress"],
         responsibilities: [
           {
             vi: "• Tham gia các dự án website thương mại điện tử với ReactJS, Vue.js, Bootstrap, Shopify",
@@ -942,16 +1249,21 @@ export const portfolioData: PortfolioData = {
       vi: "Liên hệ với tôi",
       en: "Get In Touch",
     },
+    headline: {
+      vi: "Cùng xây dựng điều tuyệt vời",
+      en: "Let's build something great",
+    },
     subtitle: {
-      vi: "Hãy cùng nhau tạo ra những điều tuyệt vời!",
-      en: "Let's create something amazing together!",
+      vi: "Sẵn sàng cho vai trò senior frontend, tech lead và fullstack. Hãy liên hệ để trò chuyện.",
+      en: "Open to senior frontend, tech lead and fullstack roles. Reach out and let's talk.",
     },
     contactInfoTitle: {
       vi: "Thông tin liên hệ",
       en: "Contact Information",
     },
     contactInfo: {
-      email: "truongnguyen1998.dev@gmail.com",
+      email: "truongnpt1998@gmail.com",
+      secondaryEmail: "truongnguyen1998.dev@gmail.com",
       phone: "0399812700",
       linkedin: "https://www.linkedin.com/in/truongnguyen1998/",
       github: "https://github.com/truongnpt",
@@ -963,19 +1275,19 @@ export const portfolioData: PortfolioData = {
     form: {
       namePlaceholder: {
         vi: "Tên của bạn",
-        en: "Your Name",
+        en: "Your name",
       },
       emailPlaceholder: {
         vi: "Email của bạn",
-        en: "Your Email",
+        en: "you@email.com",
       },
       messagePlaceholder: {
         vi: "Tin nhắn của bạn",
-        en: "Your Message",
+        en: "Tell me about your project...",
       },
       submitButton: {
         vi: "Gửi tin nhắn",
-        en: "Send Message",
+        en: "Send message",
       },
       sendingButton: {
         vi: "Đang gửi...",
@@ -994,29 +1306,24 @@ export const portfolioData: PortfolioData = {
       en: "Nguyen Phi Truong",
     },
     description: {
-      vi: "Frontend Developer với kinh nghiệm phát triển các ứng dụng web hiện đại, luôn hướng đến việc tạo ra trải nghiệm người dùng trực quan, hiệu quả và thân thiện.",
-      en: "Frontend Developer with experience in developing modern web applications, always striving to create user-friendly, efficient, and intuitive web experiences.",
+      vi: "Senior Frontend Developer — xây dựng sản phẩm SaaS có khả năng mở rộng với React, Next.js và TypeScript.",
+      en: "Senior Frontend Developer — building scalable SaaS products with React, Next.js and TypeScript.",
     },
     socialLinks: [
       {
-        href: "mailto:truongnguyen1998.dev@gmail.com",
+        href: "mailto:truongnpt1998@gmail.com",
         icon: "fas fa-envelope",
-        hoverColor: "hover:bg-blue-600",
+        label: { vi: "Email", en: "Email" },
       },
       {
-        href: "tel:0399812700",
-        icon: "fas fa-phone",
-        hoverColor: "hover:bg-green-600",
+        href: "https://www.linkedin.com/in/truongnguyen1998/",
+        icon: "fab fa-linkedin-in",
+        label: { vi: "LinkedIn", en: "LinkedIn" },
       },
       {
-        href: "#",
-        icon: "fab fa-linkedin",
-        hoverColor: "hover:bg-blue-500",
-      },
-      {
-        href: "#",
+        href: "https://github.com/truongnpt",
         icon: "fab fa-github",
-        hoverColor: "hover:bg-gray-700",
+        label: { vi: "GitHub", en: "GitHub" },
       },
     ],
     copyright: {
