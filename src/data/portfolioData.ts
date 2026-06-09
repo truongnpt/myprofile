@@ -313,8 +313,8 @@ export const portfolioData: PortfolioData = {
         en: "View CV",
       },
       cv: {
-        vi: "/cv/CV - NGUYEN PHI TRUONG - FRONTEND DEVELOPER - VI.pdf",
-        en: "/cv/CV - NGUYEN PHI TRUONG - FRONTEND DEVELOPER - EN.pdf",
+        vi: "/cv/CV - NGUYEN PHI TRUONG - SENIOR FRONTEND DEVELOPER - VI.pdf",
+        en: "/cv/CV - NGUYEN PHI TRUONG - SENIOR FRONTEND DEVELOPER - EN.pdf",
       },
     },
   },
@@ -386,7 +386,7 @@ export const portfolioData: PortfolioData = {
           "Zustand",
           "React Query",
         ],
-   
+
       },
       {
         title: "Backend",
@@ -416,7 +416,7 @@ export const portfolioData: PortfolioData = {
           "ShadCN",
           "Styled-components",
         ],
-   
+
       },
       {
         title: "API & Data",
@@ -694,7 +694,7 @@ export const portfolioData: PortfolioData = {
       {
         title: "Senior Frontend Developer",
         company: "The Mona Group - Mona Host",
-        period: "10/2025 – Hiện tại",
+        period: "07/2025 – Hiện tại",
         color: "text-green-600 dark:text-green-400",
         project: "SaaS E-Learning(LMS) - Edusavvy",
         responsibilities: [
@@ -732,7 +732,7 @@ export const portfolioData: PortfolioData = {
       {
         title: "Senior Frontend Developer",
         company: "The Mona Group - Mona Host",
-        period: "10/2025 – Hiện tại",
+        period: "07/2025 – Hiện tại",
         color: "text-green-600 dark:text-green-400",
         project: "SaaS HPM - Hosting Provider Management",
         responsibilities: [
@@ -770,7 +770,7 @@ export const portfolioData: PortfolioData = {
       {
         title: "Senior Frontend Developer",
         company: "The Mona Group - Mona Host",
-        period: "10/2025 – Hiện tại",
+        period: "07/2025 – Hiện tại",
         color: "text-green-600 dark:text-green-400",
         project: "CRM - The IELTS Workshop (TIW)",
         responsibilities: [
@@ -800,7 +800,7 @@ export const portfolioData: PortfolioData = {
       {
         title: "Senior Frontend Developer",
         company: "The Mona Group - Mona Host",
-        period: "10/2025 – Hiện tại",
+        period: "07/2025 – Hiện tại",
         color: "text-green-600 dark:text-green-400",
         project: "LMS - Pasal LMS",
         responsibilities: [
@@ -823,11 +823,11 @@ export const portfolioData: PortfolioData = {
         ],
         links: ["https://online.pasal.edu.vn"],
       },
- 
+
       {
         title: "Senior Frontend Developer",
         company: "Faba Technology",
-        period: "01/2023 – 09/2025",
+        period: "01/2023 – 06/2025",
         color: "text-blue-600 dark:text-blue-400",
         project: "SAP HR - QUALEE Human Resource Management SAP",
         responsibilities: [
@@ -854,7 +854,7 @@ export const portfolioData: PortfolioData = {
         ],
         links: ["https://console.qualee.com"],
       },
- 
+
       {
         title: "Middle Frontend Developer",
         company: "Faba Technology",
@@ -881,7 +881,7 @@ export const portfolioData: PortfolioData = {
         ],
         links: ["https://console.pnpglobalsupply.com"],
       },
- 
+
       {
         title: "Frontend Developer",
         company: "Faba Technology",
@@ -908,7 +908,7 @@ export const portfolioData: PortfolioData = {
         ],
         links: ["https://transportme.com.au"],
       },
- 
+
       {
         title: "Junior Frontend Developer",
         company: "Faba Technology",
