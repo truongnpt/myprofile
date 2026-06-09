@@ -296,12 +296,12 @@ export const portfolioData: PortfolioData = {
       en: "Nguyen Phi Truong",
     },
     title: {
-      vi: "Frontend Developer",
-      en: "Frontend Developer",
+      vi: "Senior Frontend Developer",
+      en: "Senior Frontend Developer",
     },
     description: {
-      vi: "Tôi là Frontend Developer với hơn 5 năm kinh nghiệm phát triển ứng dụng web và nền tảng SaaS. Thành thạo ReactJS, Next.js, TypeScript, HTML5, CSS3 và xây dựng giao diện responsive theo hướng mobile-first. Có kinh nghiệm phát triển các hệ thống E-Learning (LMS), CRM, HRM HPM và các nền tảng quản trị doanh nghiệp.",
-      en: "I am a Frontend Developer with over 5 years of experience in developing web applications and SaaS platforms. Proficient in ReactJS, Next.js, TypeScript, HTML5, and CSS3, with strong expertise in building responsive, mobile-first user interfaces. Experienced in developing E-Learning (LMS), CRM, HRM, HPM, and enterprise management systems.",
+      vi: "Tôi là Senior Frontend Developer với hơn 5 năm kinh nghiệm phát triển ứng dụng web và nền tảng SaaS. Thành thạo ReactJS, Next.js, TypeScript, HTML5, CSS3 và xây dựng giao diện responsive theo hướng mobile-first. Có kinh nghiệm phát triển các hệ thống E-Learning (LMS), CRM, HRM HPM và các nền tảng quản trị doanh nghiệp.",
+      en: "I am a Senior Frontend Developer with over 5 years of experience in developing web applications and SaaS platforms. Proficient in ReactJS, Next.js, TypeScript, HTML5, and CSS3, with strong expertise in building responsive, mobile-first user interfaces. Experienced in developing E-Learning (LMS), CRM, HRM, HPM, and enterprise management systems.",
     },
     buttons: {
       contact: {
@@ -347,8 +347,8 @@ export const portfolioData: PortfolioData = {
       },
     ],
     description1: {
-      vi: "Tôi là Frontend Developer với hơn 5 năm kinh nghiệm phát triển ứng dụng web và nền tảng SaaS. Thành thạo ReactJS, Next.js, TypeScript, HTML5, CSS3 và xây dựng giao diện responsive theo hướng mobile-first. Có kinh nghiệm phát triển các hệ thống E-Learning (LMS), CRM, HRM HPM và các nền tảng quản trị doanh nghiệp.",
-      en: "I am a Frontend Developer with over 5 years of experience in developing web applications and SaaS platforms. Proficient in ReactJS, Next.js, TypeScript, HTML5, and CSS3, with strong expertise in building responsive, mobile-first user interfaces. Experienced in developing E-Learning (LMS), CRM, HRM, HPM, and enterprise management systems.",
+      vi: "Tôi là Senior Frontend Developer với hơn 5 năm kinh nghiệm phát triển ứng dụng web và nền tảng SaaS. Thành thạo ReactJS, Next.js, TypeScript, HTML5, CSS3 và xây dựng giao diện responsive theo hướng mobile-first. Có kinh nghiệm phát triển các hệ thống E-Learning (LMS), CRM, HRM HPM và các nền tảng quản trị doanh nghiệp.",
+      en: "I am a Senior Frontend Developer with over 5 years of experience in developing web applications and SaaS platforms. Proficient in ReactJS, Next.js, TypeScript, HTML5, and CSS3, with strong expertise in building responsive, mobile-first user interfaces. Experienced in developing E-Learning (LMS), CRM, HRM, HPM, and enterprise management systems.",
     },
     description2: {
       vi: "Có nền tảng Fullstack với PHP/Laravel, MySQL, giúp phối hợp hiệu quả giữa frontend và backend trong quá trình phát triển sản phẩm. Có kinh nghiệm xây dựng giao diện từ Figma, tích hợp RESTful API, WebSocket, tối ưu hiệu năng và trải nghiệm người dùng. Đồng thời tham gia review code, xây dựng kiến trúc frontend và áp dụng các tiêu chuẩn phát triển phần mềm trong môi trường Agile/Scrum.",
@@ -692,7 +692,7 @@ export const portfolioData: PortfolioData = {
     },
     items: [
       {
-        title: "Senior Frontend Developer",
+        title: "Senior Senior Frontend Developer",
         company: "The Mona Group - Mona Host",
         period: "07/2025 – Hiện tại",
         color: "text-green-600 dark:text-green-400",
@@ -730,7 +730,7 @@ export const portfolioData: PortfolioData = {
         links: ["https://dash.edusavvy.io"],
       },
       {
-        title: "Senior Frontend Developer",
+        title: "Senior Senior Frontend Developer",
         company: "The Mona Group - Mona Host",
         period: "07/2025 – Hiện tại",
         color: "text-green-600 dark:text-green-400",
@@ -768,7 +768,7 @@ export const portfolioData: PortfolioData = {
         links: ["https://portal.system443.com"],
       },
       {
-        title: "Senior Frontend Developer",
+        title: "Senior Senior Frontend Developer",
         company: "The Mona Group - Mona Host",
         period: "07/2025 – Hiện tại",
         color: "text-green-600 dark:text-green-400",
@@ -798,7 +798,7 @@ export const portfolioData: PortfolioData = {
         links: ["https://newcrm.tiw.vn"],
       },
       {
-        title: "Senior Frontend Developer",
+        title: "Senior Senior Frontend Developer",
         company: "The Mona Group - Mona Host",
         period: "07/2025 – Hiện tại",
         color: "text-green-600 dark:text-green-400",
@@ -825,7 +825,7 @@ export const portfolioData: PortfolioData = {
       },
 
       {
-        title: "Senior Frontend Developer",
+        title: "Senior Senior Frontend Developer",
         company: "Faba Technology",
         period: "01/2023 – 06/2025",
         color: "text-blue-600 dark:text-blue-400",
@@ -856,7 +856,7 @@ export const portfolioData: PortfolioData = {
       },
 
       {
-        title: "Middle Frontend Developer",
+        title: "Middle Senior Frontend Developer",
         company: "Faba Technology",
         period: "01/2023 – 12/2023",
         color: "text-purple-600 dark:text-purple-400",
@@ -883,7 +883,7 @@ export const portfolioData: PortfolioData = {
       },
 
       {
-        title: "Frontend Developer",
+        title: "Senior Frontend Developer",
         company: "Faba Technology",
         period: "07/2020 – 12/2022",
         color: "text-green-600 dark:text-green-400",
@@ -910,7 +910,7 @@ export const portfolioData: PortfolioData = {
       },
 
       {
-        title: "Junior Frontend Developer",
+        title: "Junior Senior Frontend Developer",
         company: "Faba Technology",
         period: "07/2019 – 06/2020",
         color: "text-orange-600 dark:text-orange-400",
@@ -994,8 +994,8 @@ export const portfolioData: PortfolioData = {
       en: "Nguyen Phi Truong",
     },
     description: {
-      vi: "Frontend Developer với kinh nghiệm phát triển các ứng dụng web hiện đại, luôn hướng đến việc tạo ra trải nghiệm người dùng trực quan, hiệu quả và thân thiện.",
-      en: "Frontend Developer with experience in developing modern web applications, always striving to create user-friendly, efficient, and intuitive web experiences.",
+      vi: "Senior Frontend Developer với kinh nghiệm phát triển các ứng dụng web hiện đại, luôn hướng đến việc tạo ra trải nghiệm người dùng trực quan, hiệu quả và thân thiện.",
+      en: "Senior Frontend Developer with experience in developing modern web applications, always striving to create user-friendly, efficient, and intuitive web experiences.",
     },
     socialLinks: [
       {
