@@ -11,6 +11,7 @@ import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import { useSmoothScroll } from "@/hooks/useSmoothScroll";
 import { portfolioData } from "@/data/portfolioData";
 import Image from "next/image";
+import { NeuralNetworkBackground } from "@/components/NeuralNetworkBackground";
 function HomeContent() {
   const { t, language } = useLanguage();
   const heroRef = useIntersectionObserver();
@@ -37,14 +38,14 @@ function HomeContent() {
           id="home"
           className="hero-section flex min-h-screen items-center px-4 pb-16 pt-28 sm:px-6 sm:pb-20 sm:pt-32"
         >
-          <div className="hero-section__grid" aria-hidden />
+          <NeuralNetworkBackground />
           <div className="hero-section__glow" aria-hidden />
 
           <div
             ref={heroRef}
             className="fade-in relative z-10 mx-auto w-full max-w-3xl text-center"
           >
-            <div className="hero-availability mb-8">
+            <div className="hero-availability mb-8 hero-interactive">
               <span className="hero-availability__dot" aria-hidden />
               {t(
                 portfolioData.hero.availability.vi,
@@ -56,12 +57,12 @@ function HomeContent() {
               {t(portfolioData.hero.greeting.vi, portfolioData.hero.greeting.en)}
             </p>
 
-            <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl lg:text-[3.25rem] lg:leading-tight">
+            <h1 className="hero-name text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl lg:text-[3.25rem] lg:leading-tight">
               {t(portfolioData.hero.name.vi, portfolioData.hero.name.en)}
             </h1>
 
-            <p className="mt-4 text-base sm:text-lg">
-              <span className="font-medium text-[var(--color-primary)] dark:text-[var(--color-primary-light)]">
+            <p className="hero-role mt-4 text-base sm:text-lg">
+              <span className="hero-role__title font-medium text-[var(--color-primary)] dark:text-[var(--color-primary-light)]">
                 {t(portfolioData.hero.title.vi, portfolioData.hero.title.en)}
               </span>
               <span className="mx-2 text-gray-400">•</span>
@@ -100,7 +101,7 @@ function HomeContent() {
               </a>
             </div>
 
-            <p className="mt-6 flex items-center justify-center gap-1.5 text-xs text-gray-400 dark:text-gray-500">
+            <p className="hero-location mt-6 flex items-center justify-center gap-1.5 text-xs text-gray-400 dark:text-gray-500">
               <i className="fas fa-map-marker-alt" aria-hidden />
               {t(
                 portfolioData.about.contactInfo.location.vi,
