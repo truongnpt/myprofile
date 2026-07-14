@@ -347,9 +347,33 @@ export interface SelectedWorkContent {
   projects: SelectedWorkProject[];
 }
 
+export interface PersonalProjectContent {
+  badge: {
+    vi: string;
+    en: string;
+  };
+  brand: string;
+  title: {
+    vi: string;
+    en: string;
+  };
+  description: {
+    vi: string;
+    en: string;
+  };
+  technologies: string[];
+  image: string;
+  url: string;
+  cta: {
+    vi: string;
+    en: string;
+  };
+}
+
 export interface PortfolioData {
   navigation: NavLink[];
   hero: HeroContent;
+  personalProject: PersonalProjectContent;
   selectedWork: SelectedWorkContent;
   about: AboutContent;
   skills: SkillsContent;
@@ -363,7 +387,6 @@ export interface PortfolioData {
 
 export const portfolioData: PortfolioData = {
   navigation: [
-    { href: "#home", vi: "Trang chủ", en: "Home" },
     { href: "#about", vi: "Giới thiệu", en: "About" },
     { href: "#skills", vi: "Kỹ năng", en: "Skills" },
     { href: "#strengths", vi: "Điểm mạnh", en: "Strengths" },
@@ -374,12 +397,47 @@ export const portfolioData: PortfolioData = {
       en: "Education & Languages",
     },
     {
+      href: "#personal-project",
+      vi: "KinderCRM",
+      en: "KinderCRM",
+    },
+    {
       href: "#selected-work",
       vi: "Dự án",
       en: "Projects",
     },
     { href: "#contact", vi: "Liên hệ", en: "Contact" },
   ],
+
+  personalProject: {
+    badge: {
+      vi: "Dự án cá nhân",
+      en: "Personal Project",
+    },
+    brand: "KinderCRM",
+    title: {
+      vi: "Quản lý trường mầm non SaaS",
+      en: "SaaS Preschool Management Platform",
+    },
+    description: {
+      vi: "Nền tảng Cloud SaaS giúp số hóa toàn diện hoạt động quản lý trường mầm non — tuyển sinh, học sinh, lớp học, giáo viên, học phí và kết nối phụ huynh trên một hệ thống thống nhất.",
+      en: "A Cloud SaaS platform that digitizes preschool operations end-to-end — admissions, students, classrooms, teachers, tuition, and parent communication in one system.",
+    },
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "Zustand",
+      "React Query",
+      "ShadCN UI",
+      "Supabase",
+    ],
+    image: "/images/kinder-banner.PNG",
+    url: "https://kindercrm.cudem.online",
+    cta: {
+      vi: "Xem sản phẩm",
+      en: "View live product",
+    },
+  },
 
   hero: {
     greeting: {
@@ -395,12 +453,12 @@ export const portfolioData: PortfolioData = {
       en: "Senior Frontend Developer",
     },
     description: {
-      vi: "Tôi là Senior Frontend Developer với hơn 6 năm kinh nghiệm phát triển ứng dụng web và các sản phẩm SaaS sử dụng ReactJS, Next.js và TypeScript. Tôi có nhiều kinh nghiệm trong việc xây dựng các giao diện người dùng hiệu năng cao, đáp ứng tốt trên nhiều thiết bị và triển khai các hệ thống phức tạp như LMS (Learning Management System), CRM (Customer Relationship Management) và HRM (Human Resource Management). Với nền tảng Fullstack vững chắc trên PHP/Laravel và MySQL, tôi có khả năng kết nối hiệu quả giữa frontend và backend, góp phần xây dựng các ứng dụng có khả năng mở rộng cao, dễ bảo trì và vận hành ổn định.",
-      en: "I am a Senior Frontend Developer with 6+ years of experience building web applications and SaaS products using ReactJS, Next.js, and TypeScript. I have extensive experience developing high-performance, responsive user interfaces and delivering complex systems such as LMS, CRM, and HRM platforms. With a strong Fullstack foundation in PHP/Laravel and MySQL, I effectively bridge frontend and backend development to build scalable, maintainable, and reliable applications."
+      vi: "Lập trình viên Frontend Senior với hơn 6 năm kinh nghiệm phát triển các nền tảng SaaS doanh nghiệp, hệ thống LMS, CRM và HRM. Thành thạo React.js, Next.js và TypeScript, đồng thời có nền tảng Full-stack với PHP/Laravel và MySQL. Có kinh nghiệm thiết kế kiến trúc Frontend có khả năng mở rộng, tối ưu hiệu năng bằng SSR/SSG, triển khai các tính năng real-time với WebSocket và phối hợp hiệu quả với các nhóm đa chức năng.",
+      en: "Senior Frontend Developer with 6+ years of experience building enterprise SaaS platforms, LMS, CRM, and HRM systems. Expert in React.js, Next.js, and TypeScript with a strong full-stack foundation in PHP/Laravel and MySQL. Proven ability to architect scalable frontend solutions, optimize performance through SSR/SSG, implement real-time features via WebSocket, and collaborate effectively with cross-functional teams.",
     },
     shortDescription: {
-      vi: "Senior Frontend Developer với hơn 6 năm xây dựng sản phẩm SaaS hiệu năng cao bằng React, Next.js & TypeScript. Nền tảng Fullstack vững với PHP/Laravel — triển khai các nền tảng LMS, CRM và HRM có khả năng mở rộng cho nhiều tổ chức.",
-      en: "Senior Frontend Developer with 6+ years building high-performance SaaS products in React, Next.js & TypeScript. Strong fullstack foundation in PHP/Laravel — shipping scalable LMS, CRM and HRM platforms used by teams across multiple organizations.",
+      vi: "Lập trình viên Frontend Senior với hơn 6 năm kinh nghiệm phát triển các nền tảng SaaS doanh nghiệp, hệ thống LMS, CRM và HRM. Thành thạo React.js, Next.js và TypeScript, đồng thời có nền tảng Full-stack với PHP/Laravel và MySQL. Có kinh nghiệm thiết kế kiến trúc Frontend có khả năng mở rộng, tối ưu hiệu năng bằng SSR/SSG, triển khai các tính năng real-time với WebSocket và phối hợp hiệu quả với các nhóm đa chức năng. Am hiểu về kiến trúc component, xây dựng Design System và hướng dẫn, hỗ trợ các lập trình viên Junior. Luôn hướng đến việc phát triển mã nguồn sạch, dễ bảo trì và tạo ra các sản phẩm có giá trị cao.",
+      en: "Senior Frontend Developer with 6+ years of hands-on experience building enterprise SaaS platforms, LMS, CRM, and HRM systems. Expert in React.js, Next.js, and TypeScript with strong full-stack foundation (PHP/Laravel, MySQL). Proven ability to architect scalable frontend solutions, optimize performance through SSR/SSG, implement real-time features via WebSocket, and lead cross-functional teams. Experienced in component architecture, design systems, and mentoring junior developers. Passionate about writing clean, maintainable code and delivering high-impact products.",
     },
     availability: {
       vi: "Sẵn sàng cho cơ hội mới",
@@ -417,8 +475,8 @@ export const portfolioData: PortfolioData = {
         en: "Download CV",
       },
       cv: {
-        vi: "/cv/CV_Senior_Frontend_Developer_Nguyen_Phi_Truong_VI.pdf",
-        en: "/cv/CV_Senior_Frontend_Developer_Nguyen_Phi_Truong_EN.pdf",
+        vi: "/cv/CV_Frontend_Developer_Nguyen_Phi_Truong_VI.pdf",
+        en: "/cv/CV_Frontend_Developer_Nguyen_Phi_Truong_EN.pdf",
       },
     },
   },
@@ -429,8 +487,8 @@ export const portfolioData: PortfolioData = {
       en: "Selected work",
     },
     subtitle: {
-      vi: "Tổng quan các sản phẩm tôi đã triển khai trong SaaS, giáo dục, nhân sự và logistics.",
-      en: "A snapshot of products I've shipped across SaaS, education, HR and logistics.",
+      vi: "Tổng quan các sản phẩm tôi đã triển khai trong SaaS, giáo dục, nhân sự, hosting và logistics.",
+      en: "A snapshot of products I've shipped across SaaS, education, HR, hosting and logistics.",
     },
     searchPlaceholder: {
       vi: "Tìm kiếm dự án...",
@@ -445,138 +503,222 @@ export const portfolioData: PortfolioData = {
       "TypeScript",
       "ShadCN UI",
       "WebSocket",
-      "REST",
       "ReactJS",
       "Laravel",
+      "Vue.js",
+      "Supabase",
     ],
     projects: [
       {
         title: {
-          vi: "Edutify — SaaS LMS",
-          en: "Edutify — SaaS LMS",
+          vi: "Edutify — Nền tảng E-Learning SaaS",
+          en: "Edutify – SaaS E-Learning Platform",
         },
         company: {
           vi: "The Mona Group — Mona Host",
           en: "The Mona Group — Mona Host",
         },
         description: {
-          vi: "Thiết kế và triển khai bộ sản phẩm giáo dục SaaS (LMS + Test Platform + CRM) với Next.js, TypeScript và ShadCN UI.",
-          en: "Designed and shipped a SaaS education suite (LMS + Test Platform + CRM) with Next.js, TypeScript and ShadCN UI.",
+          vi: "Nền tảng giáo dục đa tenant tích hợp LMS, hệ thống thi trực tuyến, CRM, quản lý khóa học, quản lý học viên, ngân hàng câu hỏi, lập lịch học và theo dõi tiến độ học tập.",
+          en: "Multi-tenant education platform featuring LMS, online testing, CRM, course management, student management, question banks, scheduling, and learning progress tracking.",
         },
-        technologies: ["Next.js", "TypeScript", "ShadCN UI", "WebSocket"],
+        technologies: [
+          "Next.js",
+          "TypeScript",
+          "Zustand",
+          "React Query",
+          "Ant Design",
+          "Open API",
+          "WebSocket",
+          "Micro Frontend",
+          "Module Federation",
+        ],
         url: "https://dash.edutify.io",
       },
       {
         title: {
-          vi: "HPM — SaaS Hosting Provider Management",
-          en: "Hosting Provider Management (HPM) — SaaS",
+          vi: "HPM — Quản lý nhà cung cấp Hosting",
+          en: "Hosting Provider Management (HPM)",
         },
         company: {
           vi: "The Mona Group — Mona Host",
           en: "The Mona Group — Mona Host",
         },
         description: {
-          vi: "Thiết kế nền tảng SaaS quản lý nhà cung cấp hosting với Next.js và ShadCN UI.",
-          en: "Designed a SaaS platform for hosting providers in Next.js + ShadCN UI.",
+          vi: "Nền tảng SaaS quản lý Hosting, Domain, khách hàng, thanh toán, hóa đơn và hỗ trợ khách hàng, được thiết kế với giao diện Responsive và kiến trúc có khả năng mở rộng.",
+          en: "SaaS platform for managing hosting services, domains, customers, billing, invoicing, and support workflows with scalable and responsive interfaces.",
         },
-        technologies: ["Next.js", "TypeScript", "ShadCN UI", "WebSocket"],
+        technologies: [
+          "Next.js",
+          "TypeScript",
+          "Zustand",
+          "React Query",
+          "ShadCN UI",
+          "Open API",
+        ],
         url: "https://portal.system443.com",
       },
       {
         title: {
           vi: "The IELTS Workshop — CRM",
-          en: "The IELTS Workshop — CRM",
+          en: "The IELTS Workshop (CRM)",
         },
         company: {
           vi: "The Mona Group — Mona Host",
           en: "The Mona Group — Mona Host",
         },
         description: {
-          vi: "Nâng cấp CRM quản lý học viên, khóa học, hợp đồng và thanh toán.",
-          en: "Upgraded CRM for student, course, contract and payment management.",
+          vi: "Nền tảng CRM quản lý học viên, khóa học, hợp đồng và thanh toán, sử dụng kiến trúc Component tái sử dụng và giao diện Responsive, đáp ứng yêu cầu vận hành và mở rộng của hệ thống.",
+          en: "CRM platform for managing students, courses, contracts, and payment workflows with production-ready interfaces and reusable component patterns.",
         },
-        technologies: ["Next.js", "TypeScript", "ShadCN UI"],
+        technologies: [
+          "Next.js",
+          "TypeScript",
+          "Zustand",
+          "React Query",
+          "ShadCN UI",
+          "RESTful API",
+        ],
         url: "https://newcrm.tiw.vn",
       },
       {
         title: {
-          vi: "Pasal LMS",
-          en: "Pasal LMS",
+          vi: "Pasal LMS — Nền tảng học trực tuyến",
+          en: "Pasal LMS – Online Learning Platform",
         },
         company: {
           vi: "The Mona Group — Mona Host",
           en: "The Mona Group — Mona Host",
         },
         description: {
-          vi: "Phát triển và nâng cấp module LMS cho học viên, bài test, lớp học và theo dõi tiến độ.",
-          en: "Developed and enhanced LMS modules for students, tests, classes and progress tracking.",
+          vi: "Nền tảng E-Learning với các chức năng quản lý khóa học, thi trực tuyến, đánh giá và theo dõi tiến độ học tập, tối ưu hiệu năng bằng hệ thống Component tái sử dụng.",
+          en: "Online learning platform with course management, assessments, online testing, and learning progress tracking with optimized performance through component reusability.",
         },
-        technologies: ["Next.js", "TypeScript", "ShadCN UI"],
+        technologies: [
+          "Next.js",
+          "TypeScript",
+          "Zustand",
+          "React Query",
+          "ShadCN UI",
+          "RESTful API",
+        ],
         url: "https://online.pasal.edu.vn",
       },
       {
         title: {
-          vi: "Qualee — HRM SaaS",
-          en: "Qualee — HRM SaaS",
+          vi: "KinderCRM — Quản lý trường mầm non SaaS",
+          en: "Kinder CRM – SaaS Preschool Management Platform",
+        },
+        company: {
+          vi: "Dự án cá nhân",
+          en: "Personal Project",
+        },
+        description: {
+          vi: "Phát triển KinderCRM – nền tảng Cloud SaaS giúp số hóa toàn diện hoạt động quản lý trường mầm non, bao gồm tuyển sinh, quản lý học sinh, lớp học, giáo viên, học phí và kết nối với phụ huynh.",
+          en: "Developed KinderCRM, a Cloud SaaS platform that digitizes preschool management, including admissions, student management, classrooms, teachers, tuition, and parent communication.",
+        },
+        technologies: [
+          "Next.js",
+          "TypeScript",
+          "Zustand",
+          "React Query",
+          "ShadCN UI",
+          "Supabase",
+        ],
+        url: "https://kindercrm.cudem.online",
+      },
+      {
+        title: {
+          vi: "Qualee — Nền tảng quản lý nhân sự",
+          en: "Qualee – Human Resource Management Platform",
         },
         company: {
           vi: "Faba Technology",
           en: "Faba Technology",
         },
         description: {
-          vi: "Xây dựng nền tảng HRM Qualee với ReactJS, TypeScript và Laravel.",
-          en: "Built the Qualee HRM platform with ReactJS, TypeScript and Laravel.",
+          vi: "Nền tảng HRM doanh nghiệp hỗ trợ quản lý nhân viên, chấm công, nghỉ phép, onboarding, quy trình nội bộ và Email Builder kéo thả, đáp ứng nhu cầu quản trị nhân sự và tự động hóa quy trình làm việc.",
+          en: "Enterprise HRM system featuring employee management, attendance tracking, leave management, onboarding workflows, internal business processes, and drag-and-drop email builder.",
         },
-        technologies: ["ReactJS", "TypeScript", "Laravel", "WebSocket"],
+        technologies: [
+          "React.js",
+          "TypeScript",
+          "Redux",
+          "Styled-components",
+          "Laravel",
+          "RESTful API",
+          "WebSocket",
+        ],
         url: "https://console.qualee.com",
       },
       {
         title: {
-          vi: "PNP Global Supply — Logistics CRM",
-          en: "PNP Global Supply — Logistics CRM",
+          vi: "PNP Global Supply — CRM Logistics",
+          en: "PNP Global Supply – Logistics CRM",
         },
         company: {
           vi: "Faba Technology",
           en: "Faba Technology",
         },
         description: {
-          vi: "Xây dựng CRM logistics với ReactJS, Ant Design và WebSocket.",
-          en: "Built logistics CRM with ReactJS + Ant Design + WebSocket.",
+          vi: "Nền tảng CRM Logistics hỗ trợ quản lý khách hàng, đơn hàng và quy trình vận hành, với sự tham gia phát triển Full-stack bao gồm giao diện, REST API và thiết kế cơ sở dữ liệu.",
+          en: "Logistics CRM platform supporting customer management and operational workflows with full-stack development including API implementation and database design.",
         },
-        technologies: ["ReactJS", "Ant Design", "Laravel", "MySQL"],
+        technologies: [
+          "React.js",
+          "React Query",
+          "Ant Design",
+          "PHP/Laravel",
+          "MySQL",
+          "Docker",
+          "WebSocket",
+        ],
         url: "https://console.pnpglobalsupply.com",
       },
       {
         title: {
-          vi: "Transportme — AU Bus Transportation",
-          en: "Transportme — AU Bus Transportation",
+          vi: "Transportme — Bán vé & theo dõi phương tiện",
+          en: "Transportme – Vehicle Ticketing & Tracking",
         },
         company: {
           vi: "Faba Technology",
           en: "Faba Technology",
         },
         description: {
-          vi: "Xây dựng nền tảng Transportme với VueJS, Vuetify và CodeIgniter.",
-          en: "Built the Transportme platform with VueJS, Vuetify and CodeIgniter.",
+          vi: "Hệ thống bán vé và theo dõi phương tiện được bảo hộ bản quyền phần mềm, tích hợp các tính năng theo yêu cầu nghiệp vụ, giao diện Responsive và tuân thủ tiêu chuẩn WCAG về khả năng truy cập web.",
+          en: "Patented software system for vehicle ticketing and tracking with responsive interfaces, business-driven features, and WCAG web accessibility compliance.",
         },
-        technologies: ["VueJS", "Vuetify", "CodeIgniter", "MySQL"],
+        technologies: [
+          "Vue.js",
+          "Vuetify",
+          "PHP/CodeIgniter",
+          "MySQL",
+          "Docker",
+          "WCAG",
+        ],
         url: "https://transportme.com.au",
       },
       {
         title: {
-          vi: "E-commerce & Corporate Websites",
-          en: "E-commerce & Corporate Websites",
+          vi: "Nền tảng thương mại điện tử",
+          en: "E-Commerce Platforms",
         },
         company: {
           vi: "Faba Technology",
           en: "Faba Technology",
         },
         description: {
-          vi: "Triển khai các dự án thương mại điện tử với ReactJS, Vue.js, Bootstrap và Shopify.",
-          en: "Shipped e-commerce projects with ReactJS, Vue.js, Bootstrap and Shopify.",
+          vi: "Phát triển nhiều nền tảng thương mại điện tử sử dụng Vue.js, Next.js, WordPress và Shopify, với giao diện Responsive, tối ưu hiệu năng và tăng cường bảo mật.",
+          en: "Multiple e-commerce platforms built with Vue.js, Next.js, WordPress, and Shopify featuring responsive design, performance optimization, and security enhancements.",
         },
-        technologies: ["ReactJS", "Vue.js", "Next.js", "Shopify"],
-        url: "https://www.sanctuaryclothing.com",
+        technologies: [
+          "Vue.js",
+          "Next.js",
+          "WordPress",
+          "Shopify",
+          "Responsive Design",
+        ],
+        url: "https://dragun-beauty.com",
       },
     ],
   },
@@ -597,8 +739,8 @@ export const portfolioData: PortfolioData = {
         color: "text-blue-600 dark:text-blue-400",
       },
       {
-        value: "10+",
-        label: { vi: "Dự án đã giao", en: "Projects Delivered" },
+        value: "20+",
+        label: { vi: "Doanh nghiệp phục vụ", en: "Businesses Served" },
         color: "text-purple-600 dark:text-purple-400",
       },
       {
@@ -627,29 +769,29 @@ export const portfolioData: PortfolioData = {
     highlights: [
       {
         text: {
-          vi: "Thiết kế kiến trúc hệ thống SaaS trong các lĩnh vực Giáo dục, Nhân sự & Logistics",
-          en: "Architected SaaS systems across Education, HR & Logistics domains",
+          vi: "Phát triển & triển khai nền tảng SaaS phục vụ 20+ doanh nghiệp (HRM, Logistics, E-Learning, Hosting)",
+          en: "Developed and deployed SaaS platforms serving 20+ businesses across HRM, Logistics, E-Learning, and Hosting",
         },
         icon: "fas fa-bolt",
       },
       {
         text: {
-          vi: "Chuyển đổi thiết kế Figma phức tạp thành hệ thống component tái sử dụng",
-          en: "Translated complex Figma designs into reusable component systems",
+          vi: "Thiết kế kiến trúc Component tái sử dụng, Design System & chuẩn hóa UI Pattern",
+          en: "Built reusable component libraries, Design Systems, and standardized UI patterns",
         },
         icon: "fas fa-bolt",
       },
       {
         text: {
-          vi: "Dẫn dắt code review & quyết định kiến trúc frontend trong team Agile",
-          en: "Led code reviews & frontend architecture decisions in Agile teams",
+          vi: "Triển khai RBAC, WebSocket realtime & tối ưu hiệu năng qua SSR/SSG",
+          en: "Implemented RBAC, WebSocket realtime features, and performance optimization via SSR/SSG",
         },
         icon: "fas fa-bolt",
       },
       {
         text: {
-          vi: "Kết nối frontend & backend với PHP/Laravel & RESTful APIs",
-          en: "Bridged frontend & backend with PHP/Laravel & RESTful APIs",
+          vi: "Phát triển Full-stack: UI, REST API, thiết kế CSDL và triển khai hệ thống",
+          en: "Full-stack delivery: UI, REST API integration, database schema design, and deployment",
         },
         icon: "fas fa-bolt",
       },
@@ -682,16 +824,65 @@ export const portfolioData: PortfolioData = {
     },
     categories: [
       {
-        title: "Frontend",
+        title: "Frontend Frameworks",
         icon: "fas fa-code",
         iconColor: "text-blue-600 dark:text-blue-400",
         skills: [
-          "ReactJS",
-          "Next.js (SSR/SSG)",
+          "React.js",
+          "Next.js",
+          "Vue.js",
           "TypeScript",
-          "Redux",
-          "Zustand",
-          "React Query",
+          "JavaScript ES6+",
+        ],
+      },
+      {
+        title: "State Management",
+        icon: "fas fa-project-diagram",
+        iconColor: "text-indigo-600 dark:text-indigo-400",
+        skills: ["Redux", "Zustand", "React Query", "Context API"],
+      },
+      {
+        title: "UI & Styling",
+        icon: "fas fa-palette",
+        iconColor: "text-purple-600 dark:text-purple-400",
+        skills: [
+          "HTML5",
+          "CSS3",
+          "SCSS",
+          "TailwindCSS",
+          "ShadCN UI",
+          "Radix UI",
+          "Ant Design",
+          "Responsive Design",
+          "WCAG",
+          "ECharts",
+        ],
+      },
+      {
+        title: "Architecture & Performance",
+        icon: "fas fa-tachometer-alt",
+        iconColor: "text-orange-600 dark:text-orange-400",
+        skills: [
+          "Micro Frontend",
+          "Module Federation",
+          "Design System",
+          "SSR / SSG",
+          "Code Splitting",
+          "Lazy Loading",
+          "Caching",
+        ],
+      },
+      {
+        title: "API & Real-time",
+        icon: "fas fa-broadcast-tower",
+        iconColor: "text-teal-600 dark:text-teal-400",
+        skills: [
+          "REST API",
+          "WebSocket",
+          "Swagger",
+          "Axios / Fetch",
+          "JWT Authentication",
+          "RBAC",
         ],
       },
       {
@@ -699,46 +890,12 @@ export const portfolioData: PortfolioData = {
         icon: "fas fa-database",
         iconColor: "text-green-600 dark:text-green-400",
         skills: [
-          "PHP / Laravel",
+          "PHP",
+          "Laravel",
           "MySQL",
-          "MVC",
-          "Query Optimization",
-          "REST APIs",
-        ],
-      },
-      {
-        title: "UI & Styling",
-        icon: "fas fa-palette",
-        iconColor: "text-purple-600 dark:text-purple-400",
-        skills: [
-          "TailwindCSS",
-          "ShadCN UI",
-          "Ant Design",
-          "Styled-Components",
-          "SCSS",
-          "Figma",
-        ],
-      },
-      {
-        title: "API & Data",
-        icon: "fas fa-project-diagram",
-        iconColor: "text-indigo-600 dark:text-indigo-400",
-        skills: [
-          "RESTful APIs",
-          "WebSocket",
-          "Axios / Fetch",
-          "Realtime Sync",
-        ],
-      },
-      {
-        title: "Performance & SEO",
-        icon: "fas fa-tachometer-alt",
-        iconColor: "text-orange-600 dark:text-orange-400",
-        skills: [
-          "Lazy Loading",
-          "Code Splitting",
-          "SSR/SSG Tuning",
-          "Core Web Vitals",
+          "Redis",
+          "Docker",
+          "Queue / Pusher",
         ],
       },
       {
@@ -748,15 +905,22 @@ export const portfolioData: PortfolioData = {
         skills: [
           "Git / GitHub / GitLab",
           "Docker",
-          "Scrum / Agile",
-          "AI-Assisted Coding",
+          "ESLint",
+          "Jira / Trello",
+          "Cursor",
+          "ChatGPT / Claude",
         ],
       },
       {
-        title: "Testing",
+        title: "Testing & QA",
         icon: "fas fa-vial",
         iconColor: "text-green-600 dark:text-green-400",
-        skills: ["Jest", "React Testing Library", "Unit Testing"],
+        skills: [
+          "React Testing Library",
+          "Unit Testing",
+          "E2E Testing",
+          "Cross-browser Testing",
+        ],
       },
     ],
     softSkillsTitle: {
@@ -766,75 +930,75 @@ export const portfolioData: PortfolioData = {
     softSkills: [
       {
         title: {
-          vi: "Tư duy logic & giải quyết vấn đề",
-          en: "Problem-Solving & Analytical Thinking",
+          vi: "Lãnh đạo & Đào tạo",
+          en: "Leadership & Mentoring",
         },
         description: {
-          vi: "Phân tích yêu cầu nghiệp vụ, xử lý sự cố, debug và tối ưu hệ thống hiệu quả.",
-          en: "Strong ability to analyze business requirements, troubleshoot issues, debug applications, and optimize system performance effectively.",
+          vi: "Dẫn dắt nhóm phát triển từ 3–4 thành viên, hướng dẫn thực tập sinh và thực hiện Code Review nhằm đảm bảo chất lượng mã nguồn.",
+          en: "Led teams (3–4 members), mentored interns, and performed code reviews to ensure code quality.",
         },
-        icon: "fas fa-brain",
+        icon: "fas fa-users",
         iconColor: "text-blue-600 dark:text-blue-400",
       },
       {
         title: {
-          vi: "Chủ động học hỏi",
-          en: "Continuous Learning",
+          vi: "Giải quyết vấn đề",
+          en: "Problem Solving",
         },
         description: {
-          vi: "Nhanh chóng tiếp cận công nghệ, thư viện và công cụ mới để nâng cao chất lượng sản phẩm.",
-          en: "Ready to learn new libraries and technologies and apply them in real projects.",
+          vi: "Có tư duy phân tích tốt, tập trung xây dựng các giải pháp có khả năng mở rộng và dễ bảo trì.",
+          en: "Strong analytical mindset focused on scalable, maintainable solutions.",
         },
-        icon: "fas fa-rocket",
+        icon: "fas fa-brain",
         iconColor: "text-yellow-500 dark:text-yellow-400",
       },
       {
         title: {
-          vi: "Giao tiếp & hợp tác",
-          en: "Communication & Collaboration",
+          vi: "Trách nhiệm & Hợp tác",
+          en: "Ownership & Collaboration",
         },
         description: {
-          vi: "Phối hợp hiệu quả với Product Owner, BA, UI/UX Designer, Tester và Backend Developer trong môi trường Agile/Scrum.",
-          en: "Effective collaboration with Product Owners, Business Analysts, UI/UX Designers, QA Engineers, and Backend Developers in Agile/Scrum environments.",
+          vi: "Chủ động, có trách nhiệm trong công việc và có kinh nghiệm làm việc hiệu quả với các nhóm đa chức năng theo quy trình Agile/Scrum.",
+          en: "Proactive, accountable, and experienced with cross-functional Agile/Scrum teams.",
         },
-        icon: "fas fa-users",
+        icon: "fas fa-handshake",
         iconColor: "text-purple-600 dark:text-purple-400",
       },
       {
         title: {
-          vi: "Phân tích nghiệp vụ",
-          en: "Business Analysis",
+          vi: "Phân tích yêu cầu",
+          en: "Requirement Analysis",
         },
         description: {
-          vi: "Đọc hiểu tài liệu tiếng Anh, phân tích yêu cầu và chuyển đổi thành giải pháp kỹ thuật phù hợp.",
-          en: "Capable of understanding English documentation, analyzing requirements, and translating business needs into technical solutions.",
+          vi: "Phân tích yêu cầu nghiệp vụ và đề xuất các giải pháp kỹ thuật phù hợp, đáp ứng khả năng mở rộng của hệ thống.",
+          en: "Analyze business requirements and propose scalable technical solutions.",
         },
         icon: "fas fa-file-alt",
         iconColor: "text-green-600 dark:text-green-400",
       },
       {
         title: {
-          vi: "Quản lý công việc",
-          en: "Work Management",
+          vi: "Quản lý quy trình nghiệp vụ (BPM)",
+          en: "Business Process Management (BPM)",
         },
         description: {
-          vi: "Có khả năng làm việc độc lập hoặc theo nhóm, đảm bảo tiến độ và chất lượng trong môi trường áp lực cao.",
-          en: "Able to work independently or collaboratively while maintaining high quality and meeting deadlines in fast-paced environments.",
+          vi: "Phối hợp với BA và PO để phân tích, thiết kế và tối ưu quy trình nghiệp vụ cho các hệ thống CRM, LMS và Logistics.",
+          en: "Work with BA/PO to define and optimize workflow requirements for CRM, LMS, and Logistics systems.",
         },
-        icon: "fas fa-book",
+        icon: "fas fa-sitemap",
         iconColor: "text-orange-600 dark:text-orange-400",
       },
       {
         title: {
-          vi: "Tinh thần trách nhiệm",
-          en: "Ownership & Responsibility",
+          vi: "Code Review & Agile",
+          en: "Code Review & Agile",
         },
         description: {
-          vi: "Cam kết chất lượng sản phẩm, tuân thủ quy trình phát triển và chủ động hỗ trợ các thành viên trong nhóm.",
-          en: "Committed to product quality, development best practices, and proactively supporting team members to achieve project goals.",
+          vi: "Thực hiện Code Review, cộng tác nhóm và làm việc theo quy trình Agile/Scrum để đảm bảo chất lượng và tiến độ dự án.",
+          en: "Experienced in code review, team collaboration, and delivering in Agile/Scrum environments.",
         },
         icon: "fas fa-check-circle",
-        iconColor: "text-green-600 dark:text-green-400",
+        iconColor: "text-teal-600 dark:text-teal-400",
       },
     ],
   },
@@ -851,75 +1015,99 @@ export const portfolioData: PortfolioData = {
     strengths: [
       {
         title: {
-          vi: "Thành thạo ReactJS & Next.js",
-          en: "ReactJS & Next.js Mastery",
+          vi: "Phát triển nền tảng doanh nghiệp",
+          en: "Enterprise Platform Impact",
         },
         description: {
-          vi: "Chuyên sâu SSR, SSG, App Router và các pattern React hiện đại cho hiệu năng và SEO.",
-          en: "Deep expertise in SSR, SSG, App Router and modern React patterns for performance and SEO.",
+          vi: "Tham gia phát triển và triển khai các nền tảng SaaS phục vụ hơn 20 doanh nghiệp trong các lĩnh vực HRM, Logistics, E-Learning và Hosting.",
+          en: "Developed and deployed SaaS platforms serving 20+ businesses across HRM, Logistics, E-Learning, and Hosting domains.",
         },
-        icon: "fas fa-bolt",
+        icon: "fas fa-building",
         iconColor: "text-blue-600 dark:text-blue-400",
       },
       {
         title: {
-          vi: "Kiến trúc Design System",
-          en: "Design System Architect",
+          vi: "Tối ưu hiệu năng",
+          en: "Performance Optimization",
         },
         description: {
-          vi: "Xây dựng thư viện component tái sử dụng với TailwindCSS, ShadCN UI, Ant Design và Styled-components.",
-          en: "Build reusable component libraries with TailwindCSS, ShadCN UI, Ant Design and Styled-components.",
-        },
-        icon: "fas fa-layer-group",
-        iconColor: "text-purple-600 dark:text-purple-400",
-      },
-      {
-        title: {
-          vi: "Fullstack đa năng",
-          en: "Fullstack Capable",
-        },
-        description: {
-          vi: "Hơn 3 năm xây dựng backend với PHP/Laravel và MySQL — hiệu quả trên toàn bộ stack.",
-          en: "3+ years building backends with PHP/Laravel and MySQL — effective across the whole stack.",
-        },
-        icon: "fas fa-database",
-        iconColor: "text-green-600 dark:text-green-400",
-      },
-      {
-        title: {
-          vi: "Realtime & APIs",
-          en: "Realtime & APIs",
-        },
-        description: {
-          vi: "Microservices RESTful và tính năng realtime WebSocket ở quy mô production.",
-          en: "RESTful microservices and WebSocket-powered realtime features at production scale.",
-        },
-        icon: "fas fa-broadcast-tower",
-        iconColor: "text-indigo-600 dark:text-indigo-400",
-      },
-      {
-        title: {
-          vi: "Hiệu năng & SEO",
-          en: "Performance & SEO",
-        },
-        description: {
-          vi: "Responsive mobile-first, lazy loading, code splitting và tối ưu Core Web Vitals.",
-          en: "Mobile-first responsive design, lazy loading, code splitting and Core Web Vitals optimization.",
+          vi: "Nâng cao tốc độ tải trang và trải nghiệm người dùng thông qua Code Splitting, SSR/SSG, Lazy Loading và Caching trên production.",
+          en: "Improved page load speed and UX across production platforms through code splitting, SSR/SSG, and caching strategies.",
         },
         icon: "fas fa-tachometer-alt",
         iconColor: "text-orange-600 dark:text-orange-400",
       },
       {
         title: {
-          vi: "Hợp tác Agile",
-          en: "Agile Collaboration",
+          vi: "Kiến trúc Real-time",
+          en: "Real-time Architecture",
         },
         description: {
-          vi: "Sẵn sàng sở hữu kiến trúc frontend và phối hợp với PM, BA, UX và Backend.",
-          en: "Comfortable owning frontend architecture while shipping with PM, BA, UX and Backend partners.",
+          vi: "Thiết kế và triển khai giải pháp WebSocket cho các tính năng cộng tác và đồng bộ dữ liệu theo thời gian thực.",
+          en: "Designed and implemented WebSocket integration for collaborative features and real-time data synchronization.",
+        },
+        icon: "fas fa-broadcast-tower",
+        iconColor: "text-indigo-600 dark:text-indigo-400",
+      },
+      {
+        title: {
+          vi: "Kiến trúc Component",
+          en: "Component Architecture",
+        },
+        description: {
+          vi: "Xây dựng thư viện Component tái sử dụng và chuẩn hóa UI Pattern, giúp giảm trùng lặp mã nguồn và tăng hiệu quả phát triển.",
+          en: "Built reusable component libraries and standardized UI patterns reducing code duplication and improving development efficiency.",
+        },
+        icon: "fas fa-layer-group",
+        iconColor: "text-purple-600 dark:text-purple-400",
+      },
+      {
+        title: {
+          vi: "Hệ thống phân quyền (RBAC)",
+          en: "RBAC Systems",
+        },
+        description: {
+          vi: "Thiết kế và triển khai hệ thống Role-Based Access Control (RBAC) cùng cơ chế phân quyền linh hoạt cho các ứng dụng doanh nghiệp.",
+          en: "Designed and implemented complex role-based access control (RBAC) and permission management systems for enterprise applications.",
+        },
+        icon: "fas fa-shield-alt",
+        iconColor: "text-green-600 dark:text-green-400",
+      },
+      {
+        title: {
+          vi: "Team Leadership",
+          en: "Team Leadership",
+        },
+        description: {
+          vi: "Tham gia định hướng kiến trúc Frontend, thực hiện Code Review và hướng dẫn các lập trình viên Junior áp dụng các thực tiễn phát triển phần mềm hiệu quả.",
+          en: "Led frontend architecture decisions, performed code reviews, and mentored junior developers on best practices and scalable solutions.",
         },
         icon: "fas fa-users",
         iconColor: "text-teal-600 dark:text-teal-400",
+      },
+      {
+        title: {
+          vi: "Phát triển Full-stack",
+          en: "Full-Stack Delivery",
+        },
+        description: {
+          vi: "Tham gia phát triển sản phẩm từ đầu đến cuối, bao gồm xây dựng giao diện người dùng, tích hợp REST API, thiết kế cơ sở dữ liệu và triển khai hệ thống.",
+          en: "Contributed to end-to-end product development including frontend UI, REST API integration, database schema design, and deployment.",
+        },
+        icon: "fas fa-database",
+        iconColor: "text-green-600 dark:text-green-400",
+      },
+      {
+        title: {
+          vi: "Chuẩn quốc tế",
+          en: "International Standards",
+        },
+        description: {
+          vi: "Triển khai các dạng câu hỏi chuẩn IELTS và TOEIC, tuân thủ tiêu chuẩn QTI (Question & Test Interoperability) để đảm bảo khả năng tương thích và mở rộng.",
+          en: "Implemented IELTS and TOEIC standardized question types with QTI (Question & Test Interoperability) compliance.",
+        },
+        icon: "fas fa-globe",
+        iconColor: "text-blue-600 dark:text-blue-400",
       },
     ],
   },
@@ -932,12 +1120,12 @@ export const portfolioData: PortfolioData = {
     items: [
       {
         institution: {
-          vi: "Cao đẳng Kỹ Thuật Cao Thắng",
+          vi: "Trường Cao đẳng Kỹ thuật Cao Thắng",
           en: "Cao Thang Technical College",
         },
         major: {
-          vi: "Công nghệ thông tin",
-          en: "Information Technology",
+          vi: "Cử nhân Công nghệ Thông tin",
+          en: "Bachelor of Information Technology",
         },
         period: "2016 — 2019",
         color: "text-blue-600 dark:text-blue-400",
@@ -957,7 +1145,7 @@ export const portfolioData: PortfolioData = {
           en: "Vietnamese",
         },
         proficiency: {
-          vi: "Bản ngữ",
+          vi: "Ngôn ngữ chính",
           en: "Native",
         },
         color: "text-green-600 dark:text-green-400",
@@ -968,8 +1156,8 @@ export const portfolioData: PortfolioData = {
           en: "English",
         },
         proficiency: {
-          vi: "Đọc, viết & giao tiếp kỹ thuật",
-          en: "Reading, writing & technical communication",
+          vi: "Đọc, viết & trao đổi kỹ thuật",
+          en: "Reading, writing, and technical communication",
         },
         color: "text-blue-600 dark:text-blue-400",
       },
@@ -986,259 +1174,105 @@ export const portfolioData: PortfolioData = {
       en: "A timeline of impact",
     },
     subtitle: {
-      vi: "Kỹ sư frontend senior qua các lĩnh vực SaaS Giáo dục, Nhân sự, Logistics và Thương mại điện tử.",
-      en: "Senior frontend engineering across SaaS Education, HR, Logistics and E-commerce domains.",
+      vi: "Kỹ sư frontend senior qua các lĩnh vực SaaS Giáo dục, Nhân sự, Logistics, Hosting và Thương mại điện tử.",
+      en: "Senior frontend engineering across SaaS Education, HR, Logistics, Hosting and E-commerce domains.",
     },
     items: [
       {
         title: "Senior Frontend Developer",
-        company: "The Mona Group - Mona Host",
+        company: "The Mona Group – Mona Host",
         period: "10/2025 – Hiện tại",
         color: "text-green-600 dark:text-green-400",
-        project: "Edutify — SaaS LMS",
-        technologies: ["Next.js", "TypeScript", "ShadCN UI", "WebSocket", "REST"],
+        project: "E-Learning, CRM & Hosting SaaS",
+        technologies: ["Next.js", "ReactJS", "TypeScript", "WebSocket", "SSR/SSG"],
         responsibilities: [
           {
-            vi: "• Thiết kế, phát triển và quản lý bộ sản phẩm giáo dục theo mô hình SaaS, bao gồm Test Platform, LMS và CRM bằng Next.js, TypeScript và ShadCN UI",
-            en: "• Designed, developed and managed a SaaS education product suite including Test Platform, LMS and CRM using Next.js, TypeScript and ShadCN UI",
+            vi: "• Phát triển và bảo trì nhiều nền tảng SaaS doanh nghiệp trong các lĩnh vực E-Learning, CRM và Hosting bằng Next.js, ReactJS và TypeScript.",
+            en: "• Developed and maintained multiple enterprise SaaS platforms across E-Learning, CRM, and Hosting domains using Next.js, ReactJS and TypeScript.",
           },
           {
-            vi: "• Xây dựng giao diện từ thiết kế Figma, đảm bảo tính nhất quán, khả năng tái sử dụng và trải nghiệm người dùng tối ưu",
-            en: "• Built UI from Figma designs, ensuring consistency, reusability and optimal user experience",
+            vi: "• Xây dựng thư viện Component tái sử dụng và chuẩn hóa UI Pattern, giúp tăng hiệu quả phát triển và cải thiện khả năng bảo trì mã nguồn.",
+            en: "• Built reusable component libraries and standardized UI patterns, improving development efficiency and code maintainability.",
           },
           {
-            vi: "• Tham gia phát triển các module quản lý học viên, khóa học, lớp học, lịch học, bài kiểm tra, ngân hàng câu hỏi, CRM và theo dõi tiến độ học tập",
-            en: "• Developed modules for student, course, class and schedule management, exams, question banks, CRM and learning progress tracking",
+            vi: "• Tối ưu hiệu năng ứng dụng và trải nghiệm người dùng thông qua Server-Side Rendering (SSR), Static Site Generation (SSG), đồng thời xây dựng giao diện Responsive theo hướng Mobile-First.",
+            en: "• Optimized application performance and user experience through SSR and SSG, while implementing responsive, mobile-first designs across all screen sizes.",
           },
           {
-            vi: "• Tối ưu hiệu năng, khả năng mở rộng và độ ổn định của hệ thống nhằm đáp ứng nhu cầu vận hành đa tổ chức",
-            en: "• Optimized performance, scalability and system stability to support multi-organization operations",
+            vi: "• Phát triển các tính năng Real-time như Dashboard, Thông báo và Chat, đảm bảo dữ liệu được đồng bộ theo thời gian thực.",
+            en: "• Developed real-time features, including dashboards, notifications, and chat functionality for the system.",
           },
           {
-            vi: "• Tích hợp RESTful API, WebSocket và các tính năng đồng bộ dữ liệu thời gian thực giữa các module",
-            en: "• Integrated RESTful APIs, WebSocket and real-time data sync features across modules",
+            vi: "• Phối hợp với các nhóm Product, UI/UX, Backend và QA trong môi trường Agile để thiết kế kiến trúc Frontend, thực hiện Code Review và triển khai sản phẩm.",
+            en: "• Collaborated on frontend architecture, code reviews, and cross-functional delivery with Product, UI/UX, Backend, and QA teams in Agile environments.",
           },
           {
-            vi: "• Thực hiện review code, đóng góp vào kiến trúc frontend và áp dụng các tiêu chuẩn phát triển phần mềm",
-            en: "• Conducted code reviews, contributed to frontend architecture and applied software development standards",
+            vi: "• Thiết kế và phát triển giao diện cho hệ thống phân quyền theo vai trò (RBAC), quản lý quyền truy cập và không gian làm việc theo từng tổ chức (Organization Workspace).",
+            en: "• Designed and implemented user interfaces for role-based access control (RBAC), permission management, and organization-level workspaces.",
           },
           {
-            vi: "• Phối hợp với Product Owner, UI/UX Designer và Backend Developer theo quy trình Agile/Scrum để phát triển, nâng cấp và vận hành sản phẩm",
-            en: "• Collaborated with Product Owner, UI/UX Designer and Backend Developer in Agile/Scrum to develop, upgrade and operate the product",
-          },
-        ],
-        links: ["https://dash.edutify.io"],
-      },
-      {
-        title: "Senior Frontend Developer",
-        company: "The Mona Group - Mona Host",
-        period: "10/2025 – Hiện tại",
-        color: "text-green-600 dark:text-green-400",
-        project: "HPM — SaaS Hosting Provider Management",
-        technologies: ["Next.js", "TypeScript", "ShadCN UI", "WebSocket"],
-        responsibilities: [
-          {
-            vi: "• Thiết kế và phát triển nền tảng quản lý nhà cung cấp dịch vụ hosting (HPM) theo mô hình SaaS bằng Next.js, TypeScript và ShadCN UI.",
-            en: "• Designed and developed a SaaS Hosting Provider Management (HPM) platform using Next.js, TypeScript, and ShadCN UI.",
+            vi: "• Phối hợp với đội ngũ Backend để phân tích yêu cầu nghiệp vụ và thiết kế cơ sở dữ liệu, đảm bảo đáp ứng các yêu cầu phát triển hệ thống.",
+            en: "• Collaborated with the Backend team to analyze business requirements and design database schemas to support system development.",
           },
           {
-            vi: "• Xây dựng giao diện từ thiết kế Figma, đảm bảo tính nhất quán, khả năng tái sử dụng và trải nghiệm người dùng tối ưu.",
-            en: "• Built UI from Figma designs, ensuring consistency, reusability, and optimal user experience.",
-          },
-          {
-            vi: "• Tối ưu hiệu năng, khả năng mở rộng và độ ổn định của hệ thống.",
-            en: "• Optimized performance, scalability, and system stability.",
-          },
-          {
-            vi: "• Tích hợp RESTful API, WebSocket và các tính năng đồng bộ dữ liệu thời gian thực.",
-            en: "• Integrated RESTful APIs, WebSocket, and real-time data synchronization features.",
-          },
-          {
-            vi: "• Thực hiện review code, xây dựng kiến trúc frontend và áp dụng các tiêu chuẩn phát triển phần mềm.",
-            en: "• Conducted code reviews, designed frontend architecture, and applied software development standards.",
-          },
-          {
-            vi: "• Phối hợp với đội ngũ Product, UI/UX và Backend theo quy trình Agile/Scrum để triển khai và nâng cấp sản phẩm.",
-            en: "• Collaborated with Product, UI/UX, and Backend teams in Agile/Scrum to deliver and enhance the product.",
-          },
-          {
-            vi: "• Tham gia phát triển các module quản lý khách hàng, gói dịch vụ, tên miền, hóa đơn và hỗ trợ kỹ thuật.",
-            en: "• Developed modules for customer management, service packages, domain handling, invoicing, and technical support.",
-          },
-        ],
-        links: ["https://portal.system443.com"],
-      },
-      {
-        title: "Senior Frontend Developer",
-        company: "The Mona Group - Mona Host",
-        period: "10/2025 – Hiện tại",
-        color: "text-green-600 dark:text-green-400",
-        project: "The IELTS Workshop — CRM",
-        technologies: ["Next.js", "TypeScript", "ShadCN UI"],
-        responsibilities: [
-          {
-            vi: "• Phát triển và nâng cấp hệ thống CRM phục vụ quản lý học viên, khóa học, hợp đồng và thanh toán bằng Next.js, TypeScript và ShadCN UI.",
-            en: "• Developed and upgraded the CRM system for managing students, courses, contracts, and payments using Next.js, TypeScript, and ShadCN UI.",
-          },
-          {
-            vi: "• Xây dựng giao diện từ Figma, phát triển hệ thống component tái sử dụng và tối ưu trải nghiệm người dùng.",
-            en: "• Built UI from Figma, developed a reusable component system, and optimized user experience.",
-          },
-          {
-            vi: "• Tích hợp RESTful API, WebSocket và các dịch vụ nội bộ để đồng bộ dữ liệu thời gian thực.",
-            en: "• Integrated RESTful APIs, WebSocket, and internal services for real-time data synchronization.",
-          },
-          {
-            vi: "• Tham gia thiết kế kiến trúc frontend, review code và hỗ trợ các thành viên trong nhóm.",
-            en: "• Participated in frontend architecture design, conducted code reviews, and supported team members.",
-          },
-          {
-            vi: "• Phối hợp chặt chẽ với UI/UX Designer và Backend Developer để triển khai và nâng cấp các tính năng.",
-            en: "• Collaborated closely with UI/UX Designer and Backend Developer to implement and enhance features.",
-          },
-        ],
-        links: ["https://newcrm.tiw.vn"],
-      },
-      {
-        title: "Senior Frontend Developer",
-        company: "The Mona Group - Mona Host",
-        period: "10/2025 – Hiện tại",
-        color: "text-green-600 dark:text-green-400",
-        project: "Pasal LMS",
-        technologies: ["Next.js", "TypeScript", "ShadCN UI"],
-        responsibilities: [
-          {
-            vi: "• Tham gia phát triển và nâng cấp hệ thống LMS phục vụ học viên làm bài test, quản lý học viên, khóa học, lớp học, bài kiểm tra và tiến độ học tập bằng Next.js, TypeScript và ShadCN UI.",
-            en: "• Participated in the development and enhancement of the LMS for test-taking, student management, course/class/test/progress tracking using Next.js, TypeScript, and ShadCN UI.",
-          },
-          {
-            vi: "• Xây dựng giao diện từ thiết kế Figma, đảm bảo tính nhất quán, khả năng tái sử dụng và trải nghiệm người dùng tối ưu.",
-            en: "• Built UI from Figma designs, ensuring consistency, reusability, and optimal user experience.",
-          },
-          {
-            vi: "• Thực hiện review code, xây dựng component dùng chung và đóng góp vào kiến trúc frontend của hệ thống.",
-            en: "• Conducted code reviews, built shared components, and contributed to the frontend architecture.",
-          },
-          {
-            vi: "• Phối hợp với UI/UX Designer và Backend Developer để triển khai và nâng cấp sản phẩm.",
-            en: "• Collaborated with UI/UX Designer and Backend Developer to deliver and enhance the product.",
-          },
-        ],
-        links: ["https://online.pasal.edu.vn"],
-      },
- 
-      {
-        title: "Senior Frontend Developer",
-        company: "Faba Technology",
-        period: "01/2023 – 09/2025",
-        color: "text-blue-600 dark:text-blue-400",
-        project: "Qualee — HRM SaaS",
-        technologies: ["ReactJS", "TypeScript", "Laravel", "WebSocket"],
-        responsibilities: [
-          {
-            vi: "• Tham gia thiết kế và phát triển nền tảng quản lý nhân sự (HRM) Qualee bằng ReactJS, TypeScript và Laravel.",
-            en: "• Participated in designing and developing the Qualee Human Resource Management (HRM) platform using ReactJS, TypeScript, and Laravel.",
-          },
-          {
-            vi: "• Phát triển các module quản lý nhân sự, hồ sơ nhân viên, chấm công, nghỉ phép, quy trình nội bộ, làm bài onboarding, email template builder (Drag & Drop).",
-            en: "• Developed modules for HR management, employee profiles, timekeeping, leave management, internal workflows, onboarding tasks, and an email template builder (Drag & Drop).",
-          },
-          {
-            vi: "• Tích hợp RESTful API, WebSocket và các tính năng đồng bộ dữ liệu thời gian thực.",
-            en: "• Integrated RESTful APIs, WebSocket, and real-time data synchronization features.",
-          },
-          {
-            vi: "• Thực hiện review code, đóng góp vào kiến trúc frontend và áp dụng các tiêu chuẩn phát triển phần mềm.",
-            en: "• Conducted code reviews, contributed to frontend architecture, and applied software development best practices.",
-          },
-          {
-            vi: "• Phối hợp với PM, BA, UI/UX Designer và Backend Developer theo quy trình Scrum để phát triển và nâng cấp sản phẩm.",
-            en: "• Collaborated with PM, BA, UI/UX Designer, and Backend Developer following Scrum methodology to develop and enhance the product.",
-          },
-        ],
-        links: ["https://console.qualee.com"],
-      },
- 
-      {
-        title: "Middle Frontend Developer",
-        company: "Faba Technology",
-        period: "01/2023 – 12/2023",
-        color: "text-purple-600 dark:text-purple-400",
-        project: "PNP Global Supply — Logistics CRM",
-        technologies: ["ReactJS", "Ant Design", "Laravel", "MySQL", "Docker"],
-        responsibilities: [
-          {
-            vi: "• Tham gia phát triển hệ thống Logistics CRM (PNP Global Supply) với ReactJS, Ant Design framework và WebSocket.",
-            en: "• Participated in the development of the Logistics CRM system (PNP Global Supply) using ReactJS, Ant Design framework, and WebSocket.",
-          },
-          {
-            vi: "• Phát triển backend, thiết kế cơ sở dữ liệu bằng PHP/Laravel, MySQL và Docker.",
-            en: "• Developed backend and designed the database with PHP/Laravel, MySQL, and Docker.",
-          },
-          {
-            vi: "• Xây dựng tính năng mới, xử lý lỗi, tối ưu hệ thống và thực hiện review code.",
-            en: "• Built new features, handled bugs, optimized the system, and performed code reviews.",
-          },
-          {
-            vi: "• Phối hợp hỗ trợ các thành viên trong nhóm, tham gia thiết kế mockup và hiện thực hóa sản phẩm từ thiết kế đến triển khai.",
-            en: "• Collaborated to support team members, participated in mockup design, and delivered solutions from design to deployment.",
-          },
-        ],
-        links: ["https://console.pnpglobalsupply.com"],
-      },
- 
-      {
-        title: "Frontend Developer",
-        company: "Faba Technology",
-        period: "07/2020 – 12/2022",
-        color: "text-green-600 dark:text-green-400",
-        project: "Transportme — AU Bus Transportation",
-        technologies: ["VueJS", "Vuetify", "CodeIgniter", "MySQL"],
-        responsibilities: [
-          {
-            vi: "• Tham gia phát triển và nâng cấp nền tảng quản lý vận tải hành khách Transportme bằng VueJS, Vuetify và CodeIgniter.",
-            en: "• Participated in the development and enhancement of the Transportme passenger transportation management platform using VueJS, Vuetify, and CodeIgniter.",
-          },
-          {
-            vi: "• Xây dựng giao diện người dùng từ thiết kế đến triển khai hoàn chỉnh, đảm bảo tính nhất quán và trải nghiệm người dùng.",
-            en: "• Built user interfaces from design to full deployment, ensuring consistency and user experience.",
-          },
-          {
-            vi: "• Tham gia phát triển backend, thiết kế cơ sở dữ liệu bằng PHP/CodeIgniter, MySQL và Docker.",
-            en: "• Participated in backend development and database design using PHP/CodeIgniter, MySQL, and Docker.",
-          },
-          {
-            vi: "• Phát triển tính năng mới, xử lý lỗi và tối ưu hiệu năng hệ thống.",
-            en: "• Developed new features, fixed bugs, and optimized system performance.",
-          },
-        ],
-        links: ["https://transportme.com.au"],
-      },
- 
-      {
-        title: "Junior Frontend Developer",
-        company: "Faba Technology",
-        period: "07/2019 – 06/2020",
-        color: "text-orange-600 dark:text-orange-400",
-        project: "E-commerce & Corporate Websites",
-        technologies: ["ReactJS", "Vue.js", "Next.js", "Shopify", "WordPress"],
-        responsibilities: [
-          {
-            vi: "• Tham gia các dự án website thương mại điện tử với ReactJS, Vue.js, Bootstrap, Shopify",
-            en: "• Participated in E-commerce website projects with ReactJS, Vue.js, Bootstrap, Shopify",
-          },
-          {
-            vi: "• Phát triển website doanh nghiệp với NextJS, Bootstrap, PHP/WordPress",
-            en: "• Developed corporate websites with NextJS, Bootstrap, PHP/WordPress",
-          },
-          {
-            vi: "• Xây dựng giao diện responsive, sửa lỗi, nâng cấp tính năng, tối ưu SEO",
-            en: "• Built responsive UI, fixed bugs, upgraded features, optimized SEO",
+            vi: "• Tham gia phân tích, thiết kế và phát triển các dạng câu hỏi chuẩn IELTS và TOEIC, tuân thủ tiêu chuẩn quốc tế QTI (Question & Test Interoperability) nhằm đảm bảo tính tương thích và khả năng mở rộng của hệ thống đánh giá.",
+            en: "• Participated in the analysis, design, and development of IELTS and TOEIC standardized question types, ensuring compliance with official exam structures and international assessment standards QTI (Question & Test Interoperability).",
           },
         ],
         links: [
-          "https://www.sanctuaryclothing.com",
-          "https://www.fabatechnology.com",
+          "https://dash.edutify.io",
+          "https://portal.system443.com",
+          "https://newcrm.tiw.vn",
+          "https://online.pasal.edu.vn",
+        ],
+      },
+      {
+        title: "Junior → Middle → Senior Frontend Developer",
+        company: "Faba Technology",
+        period: "07/2019 – 09/2025",
+        color: "text-blue-600 dark:text-blue-400",
+        project: "HRM, Logistics CRM & Transportation",
+        technologies: [
+          "ReactJS",
+          "VueJS",
+          "TypeScript",
+          "Laravel",
+          "WebSocket",
+        ],
+        responsibilities: [
+          {
+            vi: "• Phát triển và bảo trì các nền tảng doanh nghiệp trong lĩnh vực Quản lý nhân sự (HRM), CRM Logistics và Vận tải sử dụng ReactJS, VueJS, TypeScript và Laravel.",
+            en: "• Developed and maintained enterprise platforms across Human Resource Management (HRM), Logistics CRM, and Transportation domains using ReactJS, VueJS, TypeScript, and Laravel.",
+          },
+          {
+            vi: "• Xây dựng các giải pháp Frontend có khả năng mở rộng và tái sử dụng, tích hợp RESTful API và WebSocket để phát triển các tính năng Real-time như Dashboard, Thông báo và Chat, đồng thời tham gia thiết kế và triển khai cơ sở dữ liệu phục vụ quá trình phát triển sản phẩm từ đầu đến cuối.",
+            en: "• Built scalable and reusable frontend solutions, integrated RESTful APIs and WebSocket to deliver real-time features such as dashboards, notification and chat systems, and contributed to database design and implementation to support end-to-end product development.",
+          },
+          {
+            vi: "• Phát triển chức năng tải lên, lưu trữ và xem trước tệp tin an toàn thông qua Laravel REST API, tích hợp Amazon S3 để quản lý và lưu trữ dữ liệu.",
+            en: "• Developed secure file upload and preview functionality using Laravel REST APIs, integrating Amazon S3 for file storage and management.",
+          },
+          {
+            vi: "• Chuẩn hóa và tối ưu quy trình nghiệp vụ bằng cách tập trung quản lý khách hàng, nhân viên, hợp đồng, hóa đơn, thanh toán và chăm sóc khách hàng trên một nền tảng thống nhất, giúp giảm các thao tác thủ công và nâng cao hiệu quả vận hành.",
+            en: "• Streamlined business operations and workflows by centralizing customer, employee, contract, invoicing, payment, and customer service management into a unified platform, reducing manual processes and improving operational efficiency.",
+          },
+          {
+            vi: "• Tối ưu hiệu năng ứng dụng, cải thiện tốc độ tải trang và nâng cao trải nghiệm người dùng trên các hệ thống đang vận hành.",
+            en: "• Optimized application performance, improving page load speed and enhancing the overall user experience.",
+          },
+          {
+            vi: "• Phối hợp chặt chẽ với các nhóm Product, Business Analyst (BA), UI/UX, Backend và QA để phân tích yêu cầu nghiệp vụ, đề xuất giải pháp kỹ thuật và triển khai dự án đúng tiến độ với chất lượng cao.",
+            en: "• Worked closely with cross-functional teams to analyze business requirements, develop solutions, and deliver projects on schedule with high quality.",
+          },
+          {
+            vi: "• Góp phần phát triển và vận hành thành công nền tảng WebApp phục vụ hơn 200 doanh nghiệp chỉ sau một năm ra mắt, đáp ứng yêu cầu về hiệu năng, khả năng mở rộng và độ ổn định của hệ thống.",
+            en: "• Contributed to the successful development and operation of a WebApp platform that served more than 200 businesses within just one year of launch.",
+          },
+        ],
+        links: [
+          "https://console.qualee.com",
+          "https://console.pnpglobalsupply.com",
+          "https://transportme.com.au",
         ],
       },
     ],

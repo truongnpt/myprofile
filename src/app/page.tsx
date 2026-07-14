@@ -10,10 +10,12 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import { useSmoothScroll } from "@/hooks/useSmoothScroll";
 import { portfolioData } from "@/data/portfolioData";
+import Image from "next/image";
 function HomeContent() {
   const { t, language } = useLanguage();
   const heroRef = useIntersectionObserver();
   const selectedWorkRef = useIntersectionObserver();
+  const personalProjectRef = useIntersectionObserver();
   const aboutRef = useIntersectionObserver();
   const skillsRef = useIntersectionObserver();
   const strengthsRef = useIntersectionObserver();
@@ -344,15 +346,13 @@ function HomeContent() {
                         <h3 className="experience-card__title">{item.title}</h3>
                         <p className="experience-card__project">{item.project}</p>
 
-                        {index === 0 && (
-                          <ul className="experience-card__list mt-4 space-y-2">
-                            {item.responsibilities.map((resp, ri) => (
-                              <li key={ri} className="[overflow-wrap:anywhere]">
-                                {t(resp.vi, resp.en).replace(/^[•·]\s*/, "")}
-                              </li>
-                            ))}
-                          </ul>
-                        )}
+                        <ul className="experience-card__list mt-4 space-y-2">
+                          {item.responsibilities.map((resp, ri) => (
+                            <li key={ri} className="[overflow-wrap:anywhere]">
+                              {t(resp.vi, resp.en).replace(/^[•·]\s*/, "")}
+                            </li>
+                          ))}
+                        </ul>
 
                         <div className="experience-tags">
                           {item.technologies.map((tech, ti) => (
@@ -410,6 +410,91 @@ function HomeContent() {
                 ))}
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Personal Project — KinderCRM */}
+        <section id="personal-project" className="personal-project-section">
+          <div className="personal-project-section__grid" aria-hidden />
+          <div className="personal-project-section__glow" aria-hidden />
+
+          <div
+            ref={personalProjectRef}
+            className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6"
+          >
+            <div className="slide-up personal-project__intro">
+              <span className="personal-project-badge">
+                {t(
+                  portfolioData.personalProject.badge.vi,
+                  portfolioData.personalProject.badge.en
+                )}
+              </span>
+
+              <h2 className="personal-project-brand">
+                {portfolioData.personalProject.brand}
+              </h2>
+
+              <p className="personal-project-title">
+                {t(
+                  portfolioData.personalProject.title.vi,
+                  portfolioData.personalProject.title.en
+                )}
+              </p>
+
+              <p className="personal-project-desc">
+                {t(
+                  portfolioData.personalProject.description.vi,
+                  portfolioData.personalProject.description.en
+                )}
+              </p>
+
+              <div className="personal-project-techs">
+                {portfolioData.personalProject.technologies.map((tech) => (
+                  <span key={tech} className="personal-project-tech">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+
+              <a
+                href={portfolioData.personalProject.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="personal-project-cta"
+              >
+                {t(
+                  portfolioData.personalProject.cta.vi,
+                  portfolioData.personalProject.cta.en
+                )}
+                <i className="fas fa-arrow-up-right-from-square text-xs" aria-hidden />
+              </a>
+            </div>
+          </div>
+
+          <div className="slide-up personal-project-banner-wrap">
+            <a
+              href={portfolioData.personalProject.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="personal-project-banner-link"
+              aria-label={t(
+                `Xem ${portfolioData.personalProject.brand}`,
+                `View ${portfolioData.personalProject.brand}`
+              )}
+            >
+              <Image
+                src={portfolioData.personalProject.image}
+                alt={t(
+                  portfolioData.personalProject.title.vi,
+                  portfolioData.personalProject.title.en
+                )}
+                width={1920}
+                height={1080}
+                className="personal-project-banner"
+                sizes="100vw"
+                priority={false}
+              />
+            </a>
           </div>
         </section>
 
@@ -546,7 +631,16 @@ function HomeContent() {
           <div className="site-footer__main">
             <div className="site-footer__brand">
               <a href="#home" className="site-footer__logo" aria-label={t("Về đầu trang", "Back to home")}>
-                NPT
+              <span className="relative h-9 w-9 shrink-0 overflow-hidden rounded-full shadow-md shadow-teal-700/30 ring-3 ring-[#0f766e] transition-transform duration-300 group-hover:scale-105 sm:h-10 sm:w-10 dark:ring-[#14b8a6]/25">
+            <Image
+              src="/images/hero.png"
+              alt={t(portfolioData.hero.name.vi, portfolioData.hero.name.en)}
+              fill
+              sizes="40px"
+              className="object-cover object-[center_18%]"
+              priority
+            />
+          </span>
               </a>
               <h2 className="site-footer__name">
                 {t(portfolioData.footer.name.vi, portfolioData.footer.name.en)}

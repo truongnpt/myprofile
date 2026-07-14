@@ -32,7 +32,7 @@ export default function RootLayout({
         <meta name="description" content={metadata.description as string} />
         <meta
           property="og:image"
-          content="https://myprofile.cudem.online/images/hero.jpg"
+          content="https://myprofile.cudem.online/images/hero.png"
         ></meta>
         <link
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"

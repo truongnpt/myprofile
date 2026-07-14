@@ -1134,6 +1134,230 @@ body {
     background: #5eead4;
 }
 
+/* ── Personal project (KinderCRM) ── */
+.personal-project-section {
+    --pp-bg: #f8fafc;
+    --pp-grid: rgba(37, 99, 235, 0.05);
+    --pp-glow: rgba(37, 99, 235, 0.1);
+    --pp-accent: #2563eb;
+    --pp-accent-soft: rgba(37, 99, 235, 0.1);
+    position: relative;
+    overflow: hidden;
+    padding: 5rem 0 0;
+    background-color: var(--pp-bg);
+}
+
+.dark .personal-project-section {
+    --pp-bg: #030712;
+    --pp-grid: rgba(59, 130, 246, 0.06);
+    --pp-glow: rgba(59, 130, 246, 0.12);
+    --pp-accent: #60a5fa;
+    --pp-accent-soft: rgba(59, 130, 246, 0.12);
+}
+
+.personal-project-section__grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(var(--pp-grid) 1px, transparent 1px),
+        linear-gradient(90deg, var(--pp-grid) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(ellipse 70% 50% at 50% 20%, black 15%, transparent 70%);
+    -webkit-mask-image: radial-gradient(ellipse 70% 50% at 50% 20%, black 15%, transparent 70%);
+    pointer-events: none;
+}
+
+.personal-project-section__glow {
+    position: absolute;
+    top: 8%;
+    left: 50%;
+    width: min(90%, 720px);
+    height: 280px;
+    transform: translateX(-50%);
+    background: radial-gradient(ellipse at center, var(--pp-glow) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.personal-project__intro {
+    max-width: 42rem;
+    margin: 0 auto 2.5rem;
+    text-align: center;
+}
+
+.personal-project-badge {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 1.25rem;
+    padding: 0.375rem 0.875rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(37, 99, 235, 0.2);
+    background: var(--pp-accent-soft);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--pp-accent);
+}
+
+.personal-project-brand {
+    font-size: clamp(2.25rem, 5vw, 3.25rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    color: var(--text-page);
+    animation: personal-project-brand-in 0.9s ease-out both;
+}
+
+.personal-project-title {
+    margin-top: 0.75rem;
+    font-size: clamp(1.125rem, 2.5vw, 1.375rem);
+    font-weight: 500;
+    line-height: 1.4;
+    color: var(--pp-accent);
+}
+
+.personal-project-desc {
+    margin: 1.25rem auto 0;
+    max-width: 36rem;
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--text-muted);
+}
+
+.personal-project-techs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+.personal-project-tech {
+    padding: 0.3rem 0.65rem;
+    border-radius: 0.375rem;
+    border: 1px solid #e5e7eb;
+    background: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--text-muted);
+}
+
+.dark .personal-project-tech {
+    border-color: #1f2937;
+    background: #111827;
+}
+
+.personal-project-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1.75rem;
+    padding: 0.75rem 1.35rem;
+    border-radius: 0.5rem;
+    background: var(--pp-accent);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #ffffff;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.personal-project-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(37, 99, 235, 0.28);
+}
+
+.dark .personal-project-cta {
+    background: #3b82f6;
+}
+
+.dark .personal-project-cta:hover {
+    background: #60a5fa;
+    color: #0f172a;
+    box-shadow: 0 10px 24px rgba(59, 130, 246, 0.25);
+}
+
+.personal-project-banner-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 56rem;
+    margin: 0.5rem auto 0;
+    padding: 0 1rem 3.5rem;
+    animation: personal-project-banner-in 1s ease-out 0.15s both;
+}
+
+@media (min-width: 640px) {
+    .personal-project-banner-wrap {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        padding-bottom: 4.5rem;
+    }
+}
+
+.personal-project-banner-link {
+    display: block;
+    width: 100%;
+    line-height: 0;
+    overflow: hidden;
+    border-radius: 0.75rem;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    box-shadow: 0 12px 40px rgba(15, 23, 42, 0.1);
+    transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.personal-project-banner-link:hover {
+    opacity: 0.98;
+    transform: translateY(-2px);
+    box-shadow: 0 16px 48px rgba(15, 23, 42, 0.12);
+}
+
+.dark .personal-project-banner-link {
+    border-color: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+}
+
+.personal-project-banner {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    object-position: top center;
+    max-height: min(42vh, 420px);
+}
+
+@media (min-width: 768px) {
+    .personal-project-section {
+        padding-top: 6rem;
+    }
+
+    .personal-project__intro {
+        margin-bottom: 3rem;
+    }
+}
+
+@keyframes personal-project-brand-in {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+        letter-spacing: -0.01em;
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        letter-spacing: -0.03em;
+    }
+}
+
+@keyframes personal-project-banner-in {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* ── Selected work section ── */
 .projects-section {
     background-color: var(--bg-page);
