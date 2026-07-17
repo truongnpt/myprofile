@@ -128,7 +128,7 @@ function HomeContent() {
           <div className="container mx-auto max-w-5xl px-4 sm:px-6">
             <div ref={aboutRef} className="slide-up mb-12 text-center sm:mb-14">
               <span className="about-badge mb-5">
-                # {t("GIỚI THIỆU", "ABOUT")}
+              <i className="fas fa-user text-sm" aria-hidden /> {t("GIỚI THIỆU", "ABOUT")}
               </span>
               <h2 className="about-headline">
                 {t(
@@ -182,7 +182,7 @@ function HomeContent() {
           <div className="container mx-auto max-w-5xl px-4 sm:px-6">
             <div ref={skillsRef} className="slide-up mb-12 text-center sm:mb-14">
               <span className="skills-badge mb-5">
-                <i className="fas fa-sparkles text-[10px]" aria-hidden />
+                <i className="fas fa-brain text-sm" aria-hidden />
                 {t("KỸ NĂNG", "SKILLS")}
               </span>
               <h2 className="skills-headline">
@@ -258,7 +258,7 @@ function HomeContent() {
           <div className="container mx-auto max-w-5xl px-4 sm:px-6">
             <div ref={strengthsRef} className="slide-up mb-12 text-center sm:mb-14">
               <span className="strengths-badge mb-5">
-                # {t("ĐIỂM MẠNH", "STRENGTHS")}
+                <i className="fas fa-bolt text-sm" aria-hidden /> {t("ĐIỂM MẠNH", "STRENGTHS")}
               </span>
               <h2 className="strengths-headline">
                 {t(
@@ -293,7 +293,7 @@ function HomeContent() {
           <div className="container mx-auto max-w-6xl px-4 sm:px-6">
             <div ref={experienceRef} className="slide-up mb-12 text-center sm:mb-14">
               <span className="experience-badge mb-5">
-                <i className="fas fa-sparkles text-[10px]" aria-hidden />
+                <i className="fas fa-briefcase text-sm" aria-hidden />
                 {t("KINH NGHIỆM", "EXPERIENCE")}
               </span>
               <h2 className="experience-headline">
@@ -424,7 +424,9 @@ function HomeContent() {
             className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6"
           >
             <div className="slide-up personal-project__intro">
+            
               <span className="personal-project-badge">
+              <i className="fas fa-gem text-sm mr-2" aria-hidden />
                 {t(
                   portfolioData.personalProject.badge.vi,
                   portfolioData.personalProject.badge.en
@@ -504,7 +506,7 @@ function HomeContent() {
           <div className="container mx-auto max-w-6xl px-4 sm:px-6">
             <div ref={selectedWorkRef} className="slide-up mb-12 text-center sm:mb-14">
               <span className="projects-badge mb-5">
-                🚀 {t("DỰ ÁN", "PROJECTS")}
+                <i className="fas fa-project-diagram text-sm" aria-hidden /> {t("DỰ ÁN", "PROJECTS")}
               </span>
               <h2 className="projects-headline">
                 {t(
@@ -531,7 +533,7 @@ function HomeContent() {
           <div className="container mx-auto max-w-5xl px-4 sm:px-6">
             <div ref={contactRef} className="slide-up mb-12 text-center sm:mb-14">
               <span className="contact-badge mb-5">
-                # {t("LIÊN HỆ", "CONTACT")}
+                <i className="fas fa-envelope text-sm" aria-hidden /> {t("LIÊN HỆ", "CONTACT")}
               </span>
               <h2 className="contact-headline">
                 {t(
@@ -631,9 +633,8 @@ function HomeContent() {
         <div className="container mx-auto max-w-6xl px-4 sm:px-6">
           <div className="site-footer__main">
             <div className="site-footer__brand">
-              <a href="#home" className="site-footer__logo" aria-label={t("Về đầu trang", "Back to home")}>
-              <span className="relative h-9 w-9 shrink-0 overflow-hidden rounded-full shadow-md shadow-teal-700/30 ring-3 ring-[#0f766e] transition-transform duration-300 group-hover:scale-105 sm:h-10 sm:w-10 dark:ring-[#14b8a6]/25">
-            <Image
+              <a href="#home" className="relative ring-4 ring-[#0f766e] flex items-center justify-center w-14 h-14 overflow-hidden rounded-full" aria-label={t("Về đầu trang", "Back to home")}>
+              <Image
               src="/images/hero.png"
               alt={t(portfolioData.hero.name.vi, portfolioData.hero.name.en)}
               fill
@@ -641,7 +642,6 @@ function HomeContent() {
               className="object-cover object-[center_18%]"
               priority
             />
-          </span>
               </a>
               <h2 className="site-footer__name">
                 {t(portfolioData.footer.name.vi, portfolioData.footer.name.en)}

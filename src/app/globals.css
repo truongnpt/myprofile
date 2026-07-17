@@ -293,9 +293,10 @@ body {
 
 .hero-btn-secondary:hover {
     border-color: var(--hero-accent);
-    color: var(--hero-accent);
-    background: rgba(15, 118, 110, 0.06);
+    color: #fff;
+    background: var(--hero-accent);
     transform: translateY(-3px);
+    border-color: #fff;
     box-shadow: 0 10px 24px rgba(15, 118, 110, 0.12);
 }
 

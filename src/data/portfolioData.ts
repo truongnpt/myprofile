@@ -475,8 +475,8 @@ export const portfolioData: PortfolioData = {
         en: "Download CV",
       },
       cv: {
-        vi: "/cv/CV_Frontend_Developer_Nguyen_Phi_Truong_VI.pdf",
-        en: "/cv/CV_Frontend_Developer_Nguyen_Phi_Truong_EN.pdf",
+        vi: "/cv/CV_Senior_Frontend_Developer_Nguyen_Phi_Truong_VI.pdf",
+        en: "/cv/CV_Senior_Frontend_Developer_Nguyen_Phi_Truong_EN.pdf",
       },
     },
   },
